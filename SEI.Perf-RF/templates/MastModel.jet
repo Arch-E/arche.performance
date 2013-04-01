@@ -1,0 +1,156 @@
+<%@ jet package="edu.cmu.sei.pacc.perf.eval.mast" class="MastModelGenerator" imports="edu.cmu.sei.pacc.perf.model.* java.util.*" %>
+
+<% 	MastTemplateArguments args = (MastTemplateArguments) argument;
+	PerformanceModel model = args.getModel(); 
+	Map<String, Integer> operations = new HashMap<String, Integer>();
+%>
+
+-- Real-Time System Model: MAST
+
+-- Processor
+Processing_Resource (
+    Type => Fixed_Priority_Processor,
+	Name => CPU_1,
+	Max_Priority => 400,
+    Min_Priority => 1,
+    Max_Interrupt_Priority  => 403,
+    Min_Interrupt_Priority  => 402);
+    
+-- Mutexes
+<% for(Iterator it = model.getMutexes().iterator(); it.hasNext();) {
+	Mutex mutex = (Mutex) it.next(); %>
+	Shared_Resource (
+		Type => Priority_Inheritance_Resource,
+		Name => <%= mutex.getName() %>
+	);
+<% } %>
+	    
+
+-- Tasks
+<% for(Iterator it = model.getTasks().iterator(); it.hasNext(); ) { 
+		Task task = (Task) it.next();
+	if (task.getSubtasks().isEmpty()) continue;
+	int taskId = task.getTaskId(); %>
+	-- Task <%= task.getName() %> (<%= taskId %>)
+	
+	Scheduling_Server (
+	        Type                            => Fixed_Priority,
+	        Name                            => Task_<%= taskId %>,
+	        Server_Processing_Resource      => CPU_1,
+	<% if (task instanceof SSTask) { 
+		SSTask ssTask = (SSTask) task; %>
+		    Server_Sched_Parameters => (
+		            Type => Sporadic_Server_Policy,
+		            Normal_Priority => <%= ((Subtask) task.getSubtasks().get(0)).getPriority() %>,
+		            Background_Priority => <%= ssTask.getBackgroundPriority() %>,
+		            Initial_Capacity => <%= ssTask.getBudget() %>,
+		            Replenishment_Period => <%= ssTask.getReplenishmentPeriod() %>,
+		            Max_Pending_Replenishments => 1000)
+	<% } else { %>
+	        Server_Sched_Parameters => (
+	                Type => Fixed_Priority_Policy,
+	                The_Priority => <%= ((Subtask) task.getSubtasks().get(0)).getPriority() %>)
+	<% } %>
+	);
+	
+	<% 	String subtaskToOperationName[] = new String[task.getSubtasks().size()];
+		for (int idx2 = 0; idx2 < task.getSubtasks().size(); idx2++) { 
+			Subtask subtask = (Subtask) task.getSubtasks().get(idx2);  
+			String operationBaseName = "OP_" + taskId + "_" + subtask.getName() + "_";
+			Integer operationIndex = operations.get(operationBaseName);
+			if (operationIndex != null) {
+				 operationIndex = new Integer(operationIndex.intValue() + 1);
+			} else {
+				operationIndex = new Integer(1);
+			}
+			operations.put(operationBaseName, operationIndex);
+			String operationName = operationBaseName + operationIndex; 
+			subtaskToOperationName[idx2] = operationName; %>
+		-- Subtask <%= subtask.getName() %>
+		Operation (
+			Type => Simple,
+			Name => <%= operationName %>,
+			<% if (!subtask.getMutexes().isEmpty()) { %>Shared_Resources_List => (<%
+				for (int mutexIdx = 0; mutexIdx < subtask.getMutexes().size(); mutexIdx++) { %><%= 
+					((mutexIdx == 0) ? "" : ", ") +((Mutex) subtask.getMutexes().get(mutexIdx)).getName() %><% 
+				} %>),
+			<%	} %>New_Sched_Parameters => (
+				Type => Overridden_Permanent_FP,
+		        The_Priority => <%= subtask.getPriority() %>
+			),
+			<%= args.formatExecTimeDistribution(subtask.getExecTimeDistribution()) %>
+		); 
+	<% } %>
+		
+Transaction (
+    Type => Regular,
+    Name => <%= task.getName() %>,
+    External_Events => (
+    <%	if (task instanceof PeriodicTask) {
+    	PeriodicTask periodic = (PeriodicTask) task; 
+	%>
+            (Type   => Periodic,
+             Name   => <%= task.getName() %>,
+             Period => <%= periodic.getPeriod() %><% if (args.getUseOffsets()) { %>,
+             Phase  => <%= periodic.getOffset() %><%}%>)
+    <% } else if (task instanceof AperiodicTask) {
+    	AperiodicTask aperiodic = (AperiodicTask) task;
+    	Distribution interarrival = aperiodic.getInterarrivalDistribution(); 
+    	if (interarrival instanceof Exponential) {%>
+            (Type   => Unbounded,
+             Name   => <%= task.getName() %>,
+             Avg_Interarrival => <%= interarrival.getComputedMean() %>,
+             Distribution => Poisson)
+         <% } else if (interarrival instanceof Uniform) {%>
+            (Type   => Sporadic,
+             Name   => <%= task.getName() %>,
+             Avg_Interarrival => <%= interarrival.getComputedMean() %>,
+             Distribution => Uniform,
+             Min_Interarrival => <%= ((Uniform) interarrival).getMin() %>)
+         <% } else { %>
+         	(Type => Unsupported_Interarrival_<%= interarrival.toString() %>,
+         	 Name   => <%= task.getName() %>)
+         <% } %>
+	<% } %>
+    ),
+    Internal_Events => (
+		<% for (int i = 1; i < task.getSubtasks().size(); i++) { %>
+            (Type   => regular,
+             name   => O_<%= taskId %>_<%= i %>_<%= ((Subtask) task.getSubtasks().get(i)).getName() %>),
+    	<% } %>
+            (Type   => regular,
+             name   => O_<%= taskId %>_<%= task.getSubtasks().size() %>_done
+             <% Double deadline = task.getEffectiveDeadline();
+              if (deadline != null) { %>
+             ,Timing_Requirements => (
+                     Type             => Hard_Global_Deadline,
+                     Deadline         => <%= deadline %>,
+                     Referenced_Event => <%= task.getName() %>)
+             <%}%>
+             )
+    ),
+
+
+    Event_Handlers => (
+
+		<%	for (int i = 0; i < task.getSubtasks().size(); i++ ) { 
+				String event;
+				if (i == 0) {
+					event = task.getName();
+				} else {
+					event = "O_" + taskId + "_" + i + "_" + ((Subtask) task.getSubtasks().get(i)).getName(); %>
+					,
+				<% }%>
+            (Type               => Activity,
+             Input_Event        => <%= event %>,
+             Output_Event       => O_<%= taskId %>_<%= i + 1 %>_<%= (i+1 < task.getSubtasks().size()) ? ((Subtask) task.getSubtasks().get(i + 1)).getName() : "done" %>,
+             Activity_Operation => <%= subtaskToOperationName[i] %>,
+             Activity_Server    => Task_<%= taskId %>
+            )
+			<% } %>
+     )
+);
+<% } %>
+
+             
+

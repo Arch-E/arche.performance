@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************************************
+                                    Schema templates for XML Mast Model File
+                				(Version 1.0)
+
+			                	(MAST Project)
+
+	By: Yago Pereiro Estevan (yagopereiro@hotmail.com)
+            Patricia Lopez Martinez (lopezpa@unican.es)
+            Jose M. Drake Moyano    (drakej@unican.es)
+
+    Grupo de Computadores y Tiempo Real (CTR)
+    Universidad de Cantabria
+
+	Santander, 24-jul-03
+********************************************************************************************************-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.MAST.org/Mast_1_0/Model"
+xmlns:mast_mdl="http://www.MAST.org/Mast_1_0/Model"
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+<!-- SIMPLE TYPES -->
+
+	<xs:simpleType name="Percentage">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0.0"/>
+			<xs:maxInclusive value="100.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Time">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Normalized_Execution_Time">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Absolute_Time">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Priority">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Assertion">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Yes"/>
+			<xs:enumeration value="No"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Affirmative_Assertion">
+		<xs:restriction base="mast_mdl:Assertion">
+			<xs:enumeration value="Yes"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Negative_Assertion">
+		<xs:restriction base="mast_mdl:Assertion">
+			<xs:enumeration value="No"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Distribution_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="UNIFORM"/>
+			<xs:enumeration value="POISSON"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Identifier">
+		<xs:restriction base="xs:ID">
+		<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|.|_)*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Factor">
+		<xs:restriction base="xs:float">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="Date_Time">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+
+
+	<!-- OPERATIONS-->
+
+	<xs:complexType name="Overridden_Fixed_Priority">
+		<xs:attribute name="The_Priority" type="mast_mdl:Priority" use="required"/>
+	</xs:complexType>
+
+
+	<xs:complexType name="Overridden_Permanent_FP">
+		<xs:attribute name="The_Priority" type="mast_mdl:Priority" use="required"/>
+	</xs:complexType>
+
+
+	<xs:complexType name="Simple_Operation">
+
+		<xs:sequence>
+			<!-- Overridden Scheduling Parameters -->
+			<xs:choice maxOccurs="1"  minOccurs="0">
+				<xs:element name="Overridden_Fixed_Priority" type="mast_mdl:Overridden_Fixed_Priority"/>
+				<xs:element name="Overridden_Permanent_FP" type="mast_mdl:Overridden_Permanent_FP"/>
+			</xs:choice>
+			<xs:choice>
+				<xs:element name="Shared_Resources_List" type="xs:IDREFS" minOccurs="0" maxOccurs="1"/>
+				<xs:sequence>
+					<xs:element name="Shared_Resources_To_Lock" type="xs:IDREFS" minOccurs="0" maxOccurs="1"/>
+					<xs:element name="Shared_Resources_To_Unlock" type="xs:IDREFS" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:choice>
+		</xs:sequence>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Worst_Case_Execution_Time" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Average_Case_Execution_Time" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Best_Case_Execution_Time" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="Composite_Operation">
+
+		<xs:sequence>
+			<!-- Overridden Scheduling Parameters -->
+			<xs:choice maxOccurs="1"  minOccurs="0">
+				<xs:element name="Overridden_Fixed_Priority" type="mast_mdl:Overridden_Fixed_Priority"/>
+				<xs:element name="Overridden_Permanent_FP" type="mast_mdl:Overridden_Permanent_FP"/>
+			</xs:choice>	
+			<xs:element name="Composite_Operation_List" type="xs:IDREFS" maxOccurs="1"/>
+		</xs:sequence>		
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+
+	</xs:complexType>
+
+	<xs:complexType name="Enclosing_Operation">
+
+		<xs:sequence>
+			<!-- Overridden Scheduling Parameters -->
+			<xs:choice maxOccurs="1"  minOccurs="0">
+				<xs:element name="Overridden_Fixed_Priority" type="mast_mdl:Overridden_Fixed_Priority"/>
+				<xs:element name="Overridden_Permanent_FP" type="mast_mdl:Overridden_Permanent_FP"/>
+			</xs:choice>	
+			<xs:element name="Composite_Operation_List" type="xs:IDREFS" maxOccurs="1"/>
+		</xs:sequence>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Worst_Case_Execution_Time" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Average_Case_Execution_Time" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Best_Case_Execution_Time" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+
+	</xs:complexType>
+
+
+<!--SCHEDULING_SERVER-->
+
+	<!--Scheduling Parameters  -->	
+
+	<xs:complexType name="Non_Preemptible_FP_Policy">
+
+		<xs:attribute name="The_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Preassigned" type="mast_mdl:Assertion" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Fixed_Priority_Policy">
+
+		<xs:attribute name="The_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Preassigned" type="mast_mdl:Assertion" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Interrupt_FP_Policy">
+
+		<xs:attribute name="The_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Preassigned" type="mast_mdl:Affirmative_Assertion" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Polling_Policy">
+
+		<xs:attribute name="The_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Preassigned" type="mast_mdl:Assertion" use="optional"/>
+		<xs:attribute name="Polling_Period" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Polling_Worst_Overhead" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Polling_Avg_Overhead" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Polling_Best_Overhead" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Sporadic_Server_Policy">
+
+		<xs:attribute name="Normal_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Preassigned" type="mast_mdl:Assertion" use="optional"/>
+		<xs:attribute name="Background_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Initial_Capacity" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Replenishment_Period" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Max_Pending_Replenishments" type="xs:positiveInteger" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="FP_Scheduling_Server">
+		<!-- Fixed-Priority has changed to FP_Scheduling_Server -->
+		<xs:choice>
+			<xs:element name="Non_Preemptible_FP_Policy" type="mast_mdl:Non_Preemptible_FP_Policy"/>
+			<xs:element name="Fixed_Priority_Policy" type="mast_mdl:Fixed_Priority_Policy"/>
+			<xs:element name="Interrupt_FP_Policy" type="mast_mdl:Interrupt_FP_Policy"/>
+			<xs:element name="Polling_Policy" type="mast_mdl:Polling_Policy"/>
+			<xs:element name="Sporadic_Server_Policy" type="mast_mdl:Sporadic_Server_Policy"/>
+		</xs:choice>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Server_Processing_Resource" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+	
+	<xs:complexType name="Scheduling_Server">
+
+		<xs:choice>
+			<xs:element name="FP_Scheduling_Server" type="mast_mdl:FP_Scheduling_Server"/>
+		</xs:choice>
+
+	</xs:complexType>
+	
+	
+	<!-- PROCESSING RESOURCES types element-->
+
+	<!-- System Timers-->
+
+	<xs:complexType name="Ticker">
+
+		<xs:attribute name="Worst_Overhead" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Avg_Overhead" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Best_Overhead" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Period" type="mast_mdl:Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Alarm_Clock">
+
+		<xs:attribute name="Worst_Overhead" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Avg_Overhead" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Best_Overhead" type="mast_mdl:Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<!-- Fixed_Priority_Processor-->
+
+	<xs:complexType name="Fixed_Priority_Processor">
+		<!-- System timer -->
+		<xs:choice minOccurs="0" maxOccurs="1">
+			<xs:element name="Ticker" type="mast_mdl:Ticker"/>
+			<xs:element name="Alarm_Clock" type="mast_mdl:Alarm_Clock"/>
+		</xs:choice>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Max_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Min_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Max_Interrupt_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Min_Interrupt_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Worst_Context_Switch" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Avg_Context_Switch" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Best_Context_Switch" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Worst_ISR_Switch" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Avg_ISR_Switch" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Best_ISR_Switch" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Speed_Factor" type="mast_mdl:Factor" use="optional"/>
+
+	</xs:complexType>
+
+
+<!--FIXED_PRIORITY_NETWORK  -->	
+
+	<!-- Network Drivers-->
+
+	<xs:complexType name="Packet_Driver">
+
+		<xs:sequence>
+		    <xs:element name="Packet_Server" type="mast_mdl:Scheduling_Server"/>
+			<xs:element name="Packet_Send_Operation" type="mast_mdl:Simple_Operation" minOccurs="0"/>
+			<xs:element name="Packet_Receive_Operation" type="mast_mdl:Simple_Operation" minOccurs="0"/>
+		</xs:sequence>
+
+	</xs:complexType>
+
+	<xs:complexType name="Character_Packet_Driver">
+
+		<xs:sequence>
+		    <xs:element name="Packet_Server" type="mast_mdl:Scheduling_Server"/>
+			<xs:element name="Packet_Send_Operation" type="mast_mdl:Simple_Operation" minOccurs="0"/>
+			<xs:element name="Packet_Receive_Operation" type="mast_mdl:Simple_Operation" minOccurs="0"/>
+			<xs:element name="Character_Server" type="mast_mdl:Scheduling_Server"/>
+			<xs:element name="Character_Send_Operation" type="mast_mdl:Simple_Operation" minOccurs="0"/>
+			<xs:element name="Character_Receive_Operation" type="mast_mdl:Simple_Operation" minOccurs="0"/>
+		</xs:sequence>
+
+		<xs:attribute name="Character_Transmission_Time" type="mast_mdl:Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="List_of_Drivers">
+		<xs:sequence>
+			<!-- Drivers -->		
+			<xs:choice minOccurs="1" maxOccurs="unbounded">
+				<xs:element name="Packet_Driver" type="mast_mdl:Packet_Driver"/>
+				<xs:element name="Character_Packet_Driver" type="mast_mdl:Character_Packet_Driver"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:simpleType name="Transmission_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SIMPLEX"/>
+			<xs:enumeration value="HALF_DUPLEX"/>
+			<xs:enumeration value="FULL_DUPLEX"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<!-- Fixed_Priority_Network-->
+
+	<xs:complexType name="Fixed_Priority_Network">
+
+		<xs:sequence>
+			<xs:element name="List_of_Drivers" type="mast_mdl:List_of_Drivers" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Max_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Min_Priority" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Packet_Worst_Overhead" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Packet_Avg_Overhead" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Packet_Best_Overhead" type="mast_mdl:Normalized_Execution_Time" use="optional"/>
+		<xs:attribute name="Transmission" type="mast_mdl:Transmission_Type" use="optional"/>
+		<xs:attribute name="Max_Blocking" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Max_Packet_Transmission_Time" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Min_Packet_Transmission_Time" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Speed_Factor" type="mast_mdl:Factor" use="optional"/>
+
+	</xs:complexType>
+
+
+<!--SHARED_RESOURCE-->
+
+	<xs:complexType name="Immediate_Ceiling_Resource">
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Ceiling" type="mast_mdl:Priority" use="optional"/>
+		<xs:attribute name="Preassigned" type="mast_mdl:Assertion" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Priority_Inheritance_Resource">
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+	</xs:complexType>
+
+
+<!--TRANSACTIONS-->
+
+	<!-- External_Event_Source-->
+
+	<xs:complexType name="Periodic">
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Period" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Max_Jitter" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Phase" type="mast_mdl:Absolute_Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Sporadic">
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Avg_Interarrival" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Distribution" type="mast_mdl:Distribution_Type" use="optional"/>
+		<xs:attribute name="Min_Interarrival" type="mast_mdl:Time" use="optional"/>
+
+	</xs:complexType>
+
+	<xs:complexType name="Unbounded">
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Avg_Interarrival" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Distribution" type="mast_mdl:Distribution_Type" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Bursty">
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Avg_Interarrival" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Distribution" type="mast_mdl:Distribution_Type" use="optional"/>
+		<xs:attribute name="Bound_Interval" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Max_Arrivals" type="xs:positiveInteger" use="optional"/>
+		<!-- Bound_Interval and Max_Arrivals are optional, no required-->
+	</xs:complexType>
+
+
+	<xs:complexType name="Singular">
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+		<xs:attribute name="Phase" type="mast_mdl:Absolute_Time" use="optional"/>
+		<!-- Phase is optional, no required-->
+
+	</xs:complexType>
+
+
+	<xs:complexType name="External_Event_List">
+
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element name="Periodic" type="mast_mdl:Periodic"/>
+				<xs:element name="Sporadic" type="mast_mdl:Sporadic"/>
+				<xs:element name="Unbounded" type="mast_mdl:Unbounded"/>
+				<xs:element name="Bursty" type="mast_mdl:Bursty"/>
+				<xs:element name="Singular" type="mast_mdl:Singular"/>
+			</xs:choice>
+		</xs:sequence>
+
+	</xs:complexType>
+
+
+	<!-- Timing_Requirements-->
+
+	<xs:complexType name="Global_Max_Miss_Ratio">
+
+		<xs:attribute name="Ratio" type="mast_mdl:Percentage" use="optional"/>
+		<xs:attribute name="Deadline" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Referenced_Event" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+	<xs:complexType name="Soft_Global_Deadline">
+
+		<xs:attribute name="Deadline" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Referenced_Event" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Hard_Global_Deadline">
+
+		<xs:attribute name="Deadline" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Referenced_Event" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Local_Max_Miss_Ratio">
+
+		<xs:attribute name="Ratio" type="mast_mdl:Percentage" use="optional"/>
+		<xs:attribute name="Deadline" type="mast_mdl:Time" use="optional"/>	
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Soft_Local_Deadline">
+
+		<xs:attribute name="Deadline" type="mast_mdl:Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Hard_Local_Deadline">
+
+		<xs:attribute name="Deadline" type="mast_mdl:Time" use="optional"/>	
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Max_Output_Jitter_Req">
+
+		<xs:attribute name="Max_Output_Jitter" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Referenced_Event" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Composite_Timing_Requirement">
+
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element name="Max_Output_Jitter_Req" type="mast_mdl:Max_Output_Jitter_Req"/>
+				<xs:element name="Hard_Global_Deadline" type="mast_mdl:Hard_Global_Deadline"/>
+				<xs:element name="Soft_Global_Deadline" type="mast_mdl:Soft_Global_Deadline"/>
+				<xs:element name="Global_Max_Miss_Ratio" type="mast_mdl:Global_Max_Miss_Ratio"/>
+				<xs:element name="Hard_Local_Deadline" type="mast_mdl:Hard_Local_Deadline"/>
+				<xs:element name="Soft_Local_Deadline" type="mast_mdl:Soft_Local_Deadline"/>
+				<xs:element name="Local_Max_Miss_Ratio" type="mast_mdl:Local_Max_Miss_Ratio"/>
+			</xs:choice>
+		</xs:sequence>
+
+	</xs:complexType>
+
+
+	<!-- Internal_Event -->
+
+	<xs:complexType name="Regular_Event">
+
+		<xs:sequence maxOccurs="unbounded" minOccurs="0">
+		    <xs:choice maxOccurs="unbounded"> 
+				<xs:element name="Max_Output_Jitter_Req" type="mast_mdl:Max_Output_Jitter_Req"/>
+				<xs:element name="Hard_Global_Deadline" type="mast_mdl:Hard_Global_Deadline"/>
+				<xs:element name="Soft_Global_Deadline" type="mast_mdl:Soft_Global_Deadline"/>
+				<xs:element name="Global_Max_Miss_Ratio" type="mast_mdl:Global_Max_Miss_Ratio"/>
+				<xs:element name="Hard_Local_Deadline" type="mast_mdl:Hard_Local_Deadline"/>
+				<xs:element name="Soft_Local_Deadline" type="mast_mdl:Soft_Local_Deadline"/>
+				<xs:element name="Local_Max_Miss_Ratio" type="mast_mdl:Local_Max_Miss_Ratio"/>
+			    <xs:element name="Composite_Timing_Requirement" type="mast_mdl:Composite_Timing_Requirement"/>
+			</xs:choice>
+		</xs:sequence>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Internal_Event_List">
+
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Regular_Event" type="mast_mdl:Regular_Event"/>
+				<!-- Regular has changed to Regular_Event -->
+			</xs:choice>
+		</xs:sequence>
+
+	</xs:complexType>
+
+
+	<!-- Event_Handlers-->
+
+	<xs:complexType name="Activity">
+
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Activity_Operation" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Activity_Server" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="System_Timed_Activity">
+
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Activity_Operation" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Activity_Server" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Concentrator">
+
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Input_Events_List" type="xs:IDREFS" use="required"/>
+		
+	</xs:complexType>
+
+
+	<!-- Barrier= Merge_Control -->
+
+	<xs:complexType name="Barrier">
+
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Input_Events_List" type="xs:IDREFS" use="required"/>
+		
+	</xs:complexType>
+
+
+	<!-- Delivery_Server= Branch_Control-->
+
+
+	<xs:simpleType name="Delivery_Policy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SCAN"/>
+			<xs:enumeration value="RANDOM"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="Delivery_Server">
+
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Events_List" type="xs:IDREFS" use="required"/>
+		<xs:attribute name="Delivery_Policy" type="mast_mdl:Delivery_Policy"/>
+		
+	</xs:complexType>
+
+
+	<!-- Queue_Server-->
+
+	<xs:simpleType name="Request_Policy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PRIORITY"/>
+			<xs:enumeration value="FIFO"/>
+			<xs:enumeration value="LIFO"/>
+			<xs:enumeration value="SCAN"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="Query_Server">
+
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Events_List" type="xs:IDREFS" use="required"/>
+		<xs:attribute name="Request_Policy" type="mast_mdl:Request_Policy" use="optional"/>
+		
+	</xs:complexType>
+
+
+	<!-- Multicast= Fork_Control-->
+
+	<xs:complexType name="Multicast">
+
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Events_List" type="xs:IDREFS" use="required"/>
+	
+	</xs:complexType>
+
+
+	<xs:complexType name="Rate_Divisor">
+
+		<xs:attribute name="Rate_Factor" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Delay">
+	<!-- Delay has changed to The_delay because is a reserver word in ADA-->
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Delay_Max_Interval" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Delay_Min_Interval" type="mast_mdl:Time" use="optional"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Offset">
+
+		<xs:attribute name="Input_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Output_Event" type="xs:IDREF" use="required"/>
+		<xs:attribute name="Delay_Max_Interval" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Delay_Min_Interval" type="mast_mdl:Time" use="optional"/>
+		<xs:attribute name="Referenced_Event" type="xs:IDREF" use="required"/>
+
+	</xs:complexType>
+
+
+	<xs:complexType name="Event_Handler_List">
+
+		<xs:sequence maxOccurs="unbounded">
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Activity" type="mast_mdl:Activity"/>
+				<xs:element name="System_Timed_Activity" type="mast_mdl:System_Timed_Activity"/>
+				<xs:element name="Concentrator" type="mast_mdl:Concentrator"/>
+				<xs:element name="Barrier" type="mast_mdl:Barrier"/>
+				<xs:element name="Delivery_Server" type="mast_mdl:Delivery_Server"/>
+				<xs:element name="Query_Server" type="mast_mdl:Query_Server"/>
+				<xs:element name="Multicast" type="mast_mdl:Multicast"/>
+				<xs:element name="Rate_Divisor" type="mast_mdl:Rate_Divisor"/>
+				<xs:element name="Delay" type="mast_mdl:Delay"/>
+				<xs:element name="Offset" type="mast_mdl:Offset"/>
+			</xs:choice>
+		</xs:sequence>
+
+	</xs:complexType>
+
+
+	<!-- Transaction -->
+
+	<xs:complexType name="Regular_Transaction">
+
+		<xs:sequence>
+			<xs:element name="External_Events" type="mast_mdl:External_Event_List" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Internal_Events" type="mast_mdl:Internal_Event_List" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Event_Handlers" type="mast_mdl:Event_Handler_List" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+
+		<xs:attribute name="Name" type="mast_mdl:Identifier" use="required"/>
+
+	</xs:complexType>
+
+
+	<!-- MAST MODEL  (root element)-->
+
+	<xs:element name="MAST_MODEL">
+
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:choice>
+					<!-- Processing Resources -->
+					<xs:element name="Fixed_Priority_Processor" type="mast_mdl:Fixed_Priority_Processor"/>
+					<xs:element name="Fixed_Priority_Network" type="mast_mdl:Fixed_Priority_Network"/>
+					<!-- Scheduling Servers -->
+					<xs:element name="FP_Scheduling_Server" type="mast_mdl:FP_Scheduling_Server"/>
+					<!-- Shared resources -->
+					<xs:element name="Immediate_Ceiling_Resource" type="mast_mdl:Immediate_Ceiling_Resource"/>
+					<xs:element name="Priority_Inheritance_Resource" type="mast_mdl:Priority_Inheritance_Resource"/>
+					<!-- Operations -->
+					<xs:element name="Simple_Operation" type="mast_mdl:Simple_Operation"/>
+					<xs:element name="Composite_Operation" type="mast_mdl:Composite_Operation"/>
+					<xs:element name="Enclosing_Operation" type="mast_mdl:Enclosing_Operation"/>
+					<!-- Transactions -->
+					<xs:element name="Regular_Transaction" type="mast_mdl:Regular_Transaction"/>
+				</xs:choice>
+			</xs:sequence>
+
+
+			<xs:attribute name="Model_Name" type="mast_mdl:Identifier" use="required"/>
+			<xs:attribute name="Model_Date" type="mast_mdl:Date_Time" use="required"/>
+
+		</xs:complexType>
+
+	</xs:element>
+
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+
+  <extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "org.eclipse.emf.ecore.Wizard.category.ID"
+      name="%_UI_Wizard_category">
+    </category>
+    <wizard
+      id = "edu.cmu.sei.pacc.perf.icm.presentation.IcmModelWizardID"
+      name = "%_UI_IcmModelWizard_label"
+      class = "edu.cmu.sei.pacc.perf.icm.presentation.IcmModelWizard"
+      category = "org.eclipse.emf.ecore.Wizard.category.ID"
+      icon = "icons/full/obj16/IcmModelFile.gif">
+      <description>%_UI_IcmModelWizard_description</description>
+      <selection class = "org.eclipse.core.resources.IResource" />
+    </wizard>
+  </extension>
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "edu.cmu.sei.pacc.perf.icm.presentation.IcmEditorID"
+        name = "%_UI_IcmEditor_label"
+        icon = "icons/full/obj16/IcmModelFile.gif"
+        extensions = "icm"
+        class = "edu.cmu.sei.pacc.perf.icm.presentation.IcmEditor" 
+        contributorClass="edu.cmu.sei.pacc.perf.icm.presentation.IcmActionBarContributor" >
+    </editor>
+  </extension>    
+</plugin>

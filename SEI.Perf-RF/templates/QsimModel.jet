@@ -1,0 +1,42 @@
+<%@ jet package="edu.cmu.sei.pacc.perf.eval.qsim" class="QsimModelGenerator" imports="edu.cmu.sei.pacc.perf.model.* java.util.*" %>
+
+<% PerformanceModel model = (PerformanceModel) argument; %>
+
+link L1 {A > B} queue=static service=size(1)
+
+# Tasks
+<% for(Iterator it = model.getTasks().iterator(); it.hasNext(); ) { 
+		Task task = (Task) it.next();
+	if (task.getSubtasks().isEmpty()) continue;
+	int taskId = task.getTaskId(); %>
+	# Task <%= task.getName() %> (<%= taskId %>)
+	
+	<% if (task instanceof SSTask) { %> 
+	>>> SSTask not supported yet	
+	<% } else { %>
+	begin flow <%= task.getName().replace('.', '_') %> { A > B}
+		<% if (task instanceof PeriodicTask) {
+	    	PeriodicTask periodic = (PeriodicTask) task; %>
+	    	arrival=<%=periodic.getPeriod()%>:<%=periodic.getOffset()%>
+	    	deadline=<%= periodic.getPeriod()%>
+	    <% } else if (task instanceof AperiodicTask) {
+	    	AperiodicTask aperiodic = (AperiodicTask) task;
+	    	Distribution interarrival = aperiodic.getInterarrivalDistribution(); %> 
+	        arrival=<%= QsimUtils.formatDistribution(interarrival) %>
+		<% } %>
+	   dlmanager=static
+	<% } %>
+	
+	<% for (Iterator it2 = task.getSubtasks().iterator(); it2.hasNext(); ) { 
+			Subtask subtask = (Subtask) it2.next();  %>
+		# Subtask <%= subtask.getName() %>
+	   subflow <%= subtask.getName() %> 
+	     size=<%= QsimUtils.formatDistribution(subtask.getExecTimeDistribution()) %>
+	     priority=<%= 256 - subtask.getPriority() %>
+	   endsubflow
+	<% } %>
+	end	
+<% } %>
+
+             
+

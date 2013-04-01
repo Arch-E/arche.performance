@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ArchE
+	Copyright (c) 2012 Carnegie Mellon University.
+	All Rights Reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice,
+	this list of conditions and the following acknowledgments and disclaimers.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. All advertising materials for third-party software mentioning features or
+	use of this software must display the following disclaimer:
+
+	“Neither Carnegie Mellon University nor its Software Engineering Institute
+	have reviewed or endorsed this software”
+
+	4. The names “Carnegie Mellon University,” and/or “Software Engineering
+	Institute" shall not be used to endorse or promote products derived from
+	this software without prior written permission. For written permission,
+	please contact permission@sei.cmu.edu.
+
+	5. Redistributions of any form whatsoever must retain the following
+	acknowledgment:
+
+	Copyright 2012 Carnegie Mellon University.
+
+	This material is based upon work funded and supported by the United States
+	Department of Defense under Contract No. FA8721-05-C-0003 with Carnegie
+	Mellon University for the operation of the Software Engineering Institute, a
+	federally funded research and development center.
+
+	NO WARRANTY
+
+	THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL
+	IS FURNISHED ON AN “AS-IS” BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO
+	WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER
+	INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR PURPOSE OR
+	MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+	CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH
+	RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SEI.Perf-RF/src"
+    modelPluginID="SEI.Perf_RF" modelName="PerformanceModel" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0">
+  <foreignModel>PerformanceModel.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="edu.cmu.sei.pacc.perf" disposableProviderFactory="true"
+      ecorePackage="PerformanceModel.ecore#/">
+    <genClasses image="false" ecoreClass="PerformanceModel.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Task/taskId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Task/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PerformanceModel.ecore#//Task/subtasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Task/deadline"/>
+      <genOperations ecoreOperation="PerformanceModel.ecore#//Task/getComputedExecutionMean"/>
+      <genOperations ecoreOperation="PerformanceModel.ecore#//Task/getEffectiveDeadline"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//PeriodicTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//PeriodicTask/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//PeriodicTask/offset"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//AperiodicTask">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PerformanceModel.ecore#//AperiodicTask/interarrivalDistribution"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Subtask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/retAnchorUsed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/activationSynchronous"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PerformanceModel.ecore#//Subtask/execTimeDistribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/bypass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/downsamplingFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/callingThreadPriority"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PerformanceModel.ecore#//Subtask/mutexes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Subtask/pinId"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PerformanceModel.ecore#//Distribution">
+      <genOperations ecoreOperation="PerformanceModel.ecore#//Distribution/add">
+        <genParameters ecoreParameter="PerformanceModel.ecore#//Distribution/add/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="PerformanceModel.ecore#//Distribution/getComputedMean"/>
+      <genOperations ecoreOperation="PerformanceModel.ecore#//Distribution/toString"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Constant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Exponential">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Exponential/mean"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Uniform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Uniform/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Uniform/min"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Unknown">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Unknown/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Unknown/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Unknown/max"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Normal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Normal/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Normal/stdDev"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//PerformanceModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PerformanceModel.ecore#//PerformanceModel/tasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//PerformanceModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PerformanceModel.ecore#//PerformanceModel/mutexes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//PerformanceModel/sourceFile"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//SSTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//SSTask/budget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//SSTask/replenishmentPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//SSTask/backgroundPriority"/>
+    </genClasses>
+    <genClasses ecoreClass="PerformanceModel.ecore#//Mutex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PerformanceModel.ecore#//Mutex/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

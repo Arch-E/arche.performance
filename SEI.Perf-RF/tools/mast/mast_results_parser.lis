@@ -1,0 +1,33 @@
+Initializing error report...
+ 1   Real_Time_Situation (
+ 2      Generation_Tool    => "MAST Schedulability Analysis, version 1.3.6",
+ 3      Generation_Profile => "mast_analysis varying_priorities -c -s C:\PACC\PectIDE-e3_1\MAST\test1.txt C:\PACC\PectIDE-e3_1\MAST\test1.out",
+ 4      Generation_Date    => 2006-10-05T11:32:43,
+ 5      Results            => 
+ 6          ((Type   => Slack,
+ 7            Value  => 894.53%)));
+ 9   Transaction (
+ 10     Name     => task_a,
+ 11     Results  => 
+ 12         ((Type   => Slack,
+ 13           Value  => 894.53%),
+ 14          (Type                          => Timing_Result,
+ 15           Event_Name                    => o1,
+ 16           Num_Of_Suspensions            => 0,
+ 17           Worst_Blocking_Time           => 0.00,
+ 18           Worst_Global_Response_Times   => 
+ 19              ((Referenced_Event => tick_1,
+ 20                Time_Value       => 20.00)),
+ 21           Best_Global_Response_Times    => 
+ 22              ((Referenced_Event => tick_1,
+ 23                Time_Value       => 0.00)),
+ 24           Jitters                       => 
+ 25              ((Referenced_Event => tick_1,
+ 26                Time_Value       => 20.00)))));
+ 28  Processing_Resource (
+ 29     Name     => cpu_1,
+ 30     Results  => 
+ 31         ((Type   => Slack,
+ 32           Value  => 917.49%)));
+ 33  
+

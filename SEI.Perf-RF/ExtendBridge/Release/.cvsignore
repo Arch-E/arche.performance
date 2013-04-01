@@ -1,0 +1,4 @@
+*.exp
+*.lib
+*.pch
+*.idb

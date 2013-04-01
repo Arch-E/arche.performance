@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ArchE
+	Copyright (c) 2012 Carnegie Mellon University.
+	All Rights Reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice,
+	this list of conditions and the following acknowledgments and disclaimers.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. All advertising materials for third-party software mentioning features or
+	use of this software must display the following disclaimer:
+
+	“Neither Carnegie Mellon University nor its Software Engineering Institute
+	have reviewed or endorsed this software”
+
+	4. The names “Carnegie Mellon University,” and/or “Software Engineering
+	Institute" shall not be used to endorse or promote products derived from
+	this software without prior written permission. For written permission,
+	please contact permission@sei.cmu.edu.
+
+	5. Redistributions of any form whatsoever must retain the following
+	acknowledgment:
+
+	Copyright 2012 Carnegie Mellon University.
+
+	This material is based upon work funded and supported by the United States
+	Department of Defense under Contract No. FA8721-05-C-0003 with Carnegie
+	Mellon University for the operation of the Software Engineering Institute, a
+	federally funded research and development center.
+
+	NO WARRANTY
+
+	THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL
+	IS FURNISHED ON AN “AS-IS” BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO
+	WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER
+	INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR PURPOSE OR
+	MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+	CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH
+	RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+-->
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="PerformanceModel" size="1248,824" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#/" metadata="emf-1.0" initialized="true" scrolledY="170" tag="5" key="3230303631303033205345492E506572662D5246">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="Subtask" location="440,180" size="204,213" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask" runTimeClassModel="pinId,downsamplingFactor,priority,activationSynchronous,name,bypass,callingThreadPriority,retAnchorUsed">
+    <children xsi:type="editmodel:CompartmentEditModel" size="181,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="activationSynchronous" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/activationSynchronous">
+        <model href="PerformanceModel.ecore#//Subtask/activationSynchronous"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="bypass" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/bypass">
+        <model href="PerformanceModel.ecore#//Subtask/bypass"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="callingThreadPriority" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/callingThreadPriority">
+        <model href="PerformanceModel.ecore#//Subtask/callingThreadPriority"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="downsamplingFactor" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/downsamplingFactor">
+        <model href="PerformanceModel.ecore#//Subtask/downsamplingFactor"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/name">
+        <model href="PerformanceModel.ecore#//Subtask/name"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="priority" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/priority">
+        <model href="PerformanceModel.ecore#//Subtask/priority"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="retAnchorUsed" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/retAnchorUsed">
+        <model href="PerformanceModel.ecore#//Subtask/retAnchorUsed"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="pinId" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/pinId">
+        <model href="PerformanceModel.ecore#//Subtask/pinId"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.0" target="//@children.7" targetEnd="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="execTimeDistribution" location="71,0" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/execTimeDistribution" multiplicityLabel="//@children.0/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.0/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="529,409" size="6,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="execTimeDistribution" location="549,409" size="99,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PerformanceModel.ecore#//Subtask/execTimeDistribution"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,213" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.0" target="//@children.15" targetEnd="//@children.0/@sourceConnections.1/@children.1" sourceEnd="//@children.0/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="68,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="mutexes" location="53,87" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Subtask/mutexes" multiplicityLabel="//@children.0/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.0/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="mutexes" location="515,116" size="41,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="497,116" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PerformanceModel.ecore#//Subtask/mutexes"/>
+      </children>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Subtask"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PerformanceModel" location="100,27" size="163,87" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PerformanceModel" runTimeClassModel="name">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PerformanceModel/name">
+        <model href="PerformanceModel.ecore#//PerformanceModel/name"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.4" targetEnd="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="tasks" location="66,0" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PerformanceModel/tasks" multiplicityLabel="//@children.1/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.1/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="184,209" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="tasks" location="202,209" size="26,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PerformanceModel.ecore#//PerformanceModel/tasks"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="95,87" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.15" targetEnd="//@children.1/@sourceConnections.1/@children.1" sourceEnd="//@children.1/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="163,40" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="mutexes" location="0,45" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PerformanceModel/mutexes" multiplicityLabel="//@children.1/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.1/@sourceConnections.1/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="mutexes" location="407,46" size="41,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="444,74" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PerformanceModel.ecore#//PerformanceModel/mutexes"/>
+      </children>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//PerformanceModel"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PeriodicTask" location="20,410" size="124,105" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PeriodicTask" runTimeClassModel="offset,period">
+    <children xsi:type="editmodel:CompartmentEditModel" size="94,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="offset" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PeriodicTask/offset">
+        <model href="PerformanceModel.ecore#//PeriodicTask/offset"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="period" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//PeriodicTask/period">
+        <model href="PerformanceModel.ecore#//PeriodicTask/period"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.2" target="//@children.5/@sourceConnections.0" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="62,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//PeriodicTask"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SSTask" location="156,520" size="162,123" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//SSTask" runTimeClassModel="backgroundPriority,replenishmentPeriod,budget">
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="backgroundPriority" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//SSTask/backgroundPriority">
+        <model href="PerformanceModel.ecore#//SSTask/backgroundPriority"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="budget" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//SSTask/budget">
+        <model href="PerformanceModel.ecore#//SSTask/budget"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="replenishmentPeriod" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//SSTask/replenishmentPeriod">
+        <model href="PerformanceModel.ecore#//SSTask/replenishmentPeriod"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.3" target="//@children.5" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="81,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,59"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//SSTask"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.5/@sourceConnections.0" name="Task" location="129,230" size="189,151" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Task" runTimeClassModel="taskId,name, getComputedExecutionMean(): EDouble,deadline">
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Task/name">
+        <model href="PerformanceModel.ecore#//Task/name"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="taskId" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Task/taskId">
+        <model href="PerformanceModel.ecore#//Task/taskId"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="deadline" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Task/deadline">
+        <model href="PerformanceModel.ecore#//Task/deadline"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="166,18">
+      <children xsi:type="editmodel:MethodEditModel" name="getComputedExecutionMean" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Task/computeExecutionMean">
+        <model href="PerformanceModel.ecore#//Task/getComputedExecutionMean"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.4" target="//@children.0" targetEnd="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="subtasks" location="0,125" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Task/subtasks" multiplicityLabel="//@children.4/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.4/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="429,312" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="subtasks" location="389,284" size="44,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PerformanceModel.ecore#//Task/subtasks"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="189,75" attachSource="true"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Task"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0" name="AperiodicTask" location="171,419" size="132,59" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//AperiodicTask" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.2/@sourceConnections.0" autoLocated="true" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="66,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,150" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.5" target="//@children.7" targetEnd="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="interarrivalDistribution" location="0,24" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//AperiodicTask/interarrivalDistribution" multiplicityLabel="//@children.5/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.5/@sourceConnections.1/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="458,461" size="6,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="interarrivalDistribution" location="360,433" size="104,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PerformanceModel.ecore#//AperiodicTask/interarrivalDistribution"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="132,35" attachSource="true"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//AperiodicTask"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Normal" location="320,660" size="121,105" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Normal" runTimeClassModel="mean,stdDev">
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="mean" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Normal/mean">
+        <model href="PerformanceModel.ecore#//Normal/mean"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdDev" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Normal/stdDev">
+        <model href="PerformanceModel.ecore#//Normal/stdDev"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.6" target="//@children.9/@sourceConnections.0" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Normal"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.9/@sourceConnections.0 //@children.0/@sourceConnections.0 //@children.5/@sourceConnections.1" name="Distribution" location="471,430" size="142,133" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Distribution" runTimeClassModel=" getComputedMean(): EDouble, toString(): EString, add(value: EDouble)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,54">
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Distribution/add">
+        <model href="PerformanceModel.ecore#//Distribution/add"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="getComputedMean" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Distribution/getComputedMean">
+        <model href="PerformanceModel.ecore#//Distribution/getComputedMean"/>
+      </children>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Distribution/toString">
+        <model href="PerformanceModel.ecore#//Distribution/toString"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:IndicationEditModel" autoLocated="true" source="//@children.7" target="//@children.12" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="142,48" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,33"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Distribution"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Unknown" location="762,660" size="121,123" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Unknown" runTimeClassModel="min,max,mean">
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="mean" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Unknown/mean">
+        <model href="PerformanceModel.ecore#//Unknown/mean"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="min" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Unknown/min">
+        <model href="PerformanceModel.ecore#//Unknown/min"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="max" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Unknown/max">
+        <model href="PerformanceModel.ecore#//Unknown/max"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.8" target="//@children.9/@sourceConnections.0" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Unknown"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Uniform" location="183,660" size="107,105" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Uniform" runTimeClassModel="min,max">
+    <children xsi:type="editmodel:CompartmentEditModel" size="84,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="max" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Uniform/max">
+        <model href="PerformanceModel.ecore#//Uniform/max"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="min" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Uniform/min">
+        <model href="PerformanceModel.ecore#//Uniform/min"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.6/@sourceConnections.0 //@children.10/@sourceConnections.0 //@children.11/@sourceConnections.0 //@children.8/@sourceConnections.0" autoLocated="true" source="//@children.9" target="//@children.7" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="53,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="71,133" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Uniform"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Constant" location="471,660" size="113,87" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Constant" runTimeClassModel="value">
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="value" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Constant/value">
+        <model href="PerformanceModel.ecore#//Constant/value"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.10" target="//@children.9/@sourceConnections.0" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="56,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Constant"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Exponential" location="614,660" size="118,87" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Exponential" runTimeClassModel="mean">
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="mean" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Exponential/mean">
+        <model href="PerformanceModel.ecore#//Exponential/mean"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.11" target="//@children.9/@sourceConnections.0" targetEnd="//@children.11/@sourceConnections.0/@children.1" sourceEnd="//@children.11/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="PerformanceModel.ecore#//Exponential"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:NotepadEditModel" targetConnections="//@children.7/@sourceConnections.0" location="710,445" size="290,66" fontInfo="Arial-8-0" note="Method toString() is meant to be abstract. It can't &#xD;&#xA;be declared as such in EMF because the generated&#xD;&#xA;code uses interfaces. Each Distribution sublcass gives&#xD;&#xA;a manually created implementation for toString()."/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Performance Reasoning Framework Metamodel" location="710,14" size="228,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="SEI Proprietary Information" location="710,40" size="127,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1 //@children.0/@sourceConnections.1" name="Mutex" location="455,22" size="108,87" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Mutex" runTimeClassModel="name">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/performance/PerformanceModel.ecore#//Mutex/name">
+        <model href="PerformanceModel.ecore#//Mutex/name"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="PerformanceModel.ecore#//Mutex"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="PerformanceModel.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=3"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

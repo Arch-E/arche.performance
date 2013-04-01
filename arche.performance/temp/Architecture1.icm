@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ASCII"?>
+<edu.cmu.sei.pacc.perf.icm:AssemblyInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edu.cmu.sei.pacc.perf.icm="http:///edu.cmu.sei.pacc.perf.icm" name="Architecture1">
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Manage_Itinerary">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Manage_Itinerary" mode="mutex" linkSources="//@elements.1/@pins.0" priority="1">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Manage_Itinerary" mode="mutex" linkSources="//@elements.7/@pins.1" priority="6">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Manage_External_Devices">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SourcePinInstance" name="psource_Manage_External_Devices" mode="synch" sinks="//@elements.0/@pins.0"/>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Service_gen237" mode="mutex" linkSources="//@elements.12/@pins.0" priority="8">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Handle_User_Interactions">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SourcePinInstance" name="psource_Handle_User_Interactions" mode="synch" sinks="//@elements.10/@pins.0"/>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SourcePinInstance" name="psource_Handle_User_Interactions" mode="synch" sinks="//@elements.5/@pins.0"/>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SourcePinInstance" name="psource_Handle_User_Interactions" mode="synch" sinks="//@elements.7/@pins.0"/>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Service_gen248" mode="mutex" linkSources="//@elements.14/@pins.0" priority="12">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Service_gen252" mode="mutex" linkSources="//@elements.15/@pins.0" priority="14">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Save_Data">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Service_gen256" mode="mutex" linkSources="//@elements.16/@pins.0" priority="17">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Attach_to_Model">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Attach_to_Model" mode="mutex" linkSources="//@elements.8/@pins.0" priority="2">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Modify_User_Profile">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Modify_User_Profile" mode="mutex" linkSources="//@elements.2/@pins.1" priority="4">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Query_for_Data"/>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Show_Itinerary">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Show_Itinerary" mode="mutex" linkSources="//@elements.2/@pins.2" priority="5">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SourcePinInstance" name="psource_Show_Itinerary" mode="synch" sinks="//@elements.0/@pins.1"/>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Register_Views">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SourcePinInstance" name="psource_Register_Views" mode="synch" sinks="//@elements.4/@pins.0"/>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Service_gen244" mode="mutex" linkSources="//@elements.13/@pins.0" priority="10">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Locate_Service"/>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Create_User_Profile">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Create_User_Profile" mode="mutex" linkSources="//@elements.2/@pins.0" priority="3">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:SinkPinInstance" name="psink_Service_gen256" mode="mutex" linkSources="//@elements.16/@pins.0" priority="16">
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmComponent" name="IcmC_Manage_User_Profile"/>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmService" name="Service_gen237" priority="7">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:ServiceSourcePinIcm" name="psource_service" scenarios="//@scenarios.0" mode="synch" sinks="//@elements.1/@pins.1" deadline="15.0">
+      <eventDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Constant" value="40.0"/>
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmService" name="Service_gen244" priority="9">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:ServiceSourcePinIcm" name="psource_service" scenarios="//@scenarios.1" mode="synch" sinks="//@elements.8/@pins.1" deadline="39.0">
+      <eventDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Constant" value="42.0"/>
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmService" name="Service_gen248" priority="11">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:ServiceSourcePinIcm" name="psource_service" scenarios="//@scenarios.2" mode="synch" sinks="//@elements.2/@pins.3" deadline="18.0">
+      <eventDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Constant" value="64.0"/>
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmService" name="Service_gen252" priority="13">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:ServiceSourcePinIcm" name="psource_service" scenarios="//@scenarios.3" mode="synch" sinks="//@elements.2/@pins.4" deadline="16.0">
+      <eventDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Constant" value="55.0"/>
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <elements xsi:type="edu.cmu.sei.pacc.perf.icm:IcmService" name="Service_gen256" priority="15">
+    <pins xsi:type="edu.cmu.sei.pacc.perf.icm:ServiceSourcePinIcm" name="psource_service" scenarios="//@scenarios.4" mode="synch" sinks="//@elements.10/@pins.1 //@elements.3/@pins.0" deadline="4.0">
+      <eventDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Constant" value="18.0"/>
+      <execTimeDistribution xsi:type="edu.cmu.sei.pacc.perf.icm:Uniform" max="1.0" min="1.0"/>
+    </pins>
+  </elements>
+  <scenarios name="gen237" number="1"/>
+  <scenarios name="gen244" number="2"/>
+  <scenarios name="gen248" number="3"/>
+  <scenarios name="gen252" number="4"/>
+  <scenarios name="gen256" number="5"/>
+</edu.cmu.sei.pacc.perf.icm:AssemblyInstance>

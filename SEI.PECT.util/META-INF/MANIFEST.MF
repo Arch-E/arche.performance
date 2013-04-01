@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Util Plug-in
+Bundle-SymbolicName: SEI.PECT.util
+Bundle-Version: 1.0.0
+Bundle-Activator: edu.cmu.sei.pacc.util.UtilPlugin
+Bundle-Localization: plugin
+Export-Package: edu.cmu.sei.pacc.util
+Require-Bundle: org.eclipse.core.runtime
+Eclipse-AutoStart: true
+Created-By: 1.6.0_03-b05 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.7.0

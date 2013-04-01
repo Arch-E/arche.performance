@@ -1,0 +1,36 @@
+                       SIM_MAST Status File
+                       --------------------
+
+Version 1.0
+-------------
+
+This is the first version.
+
+Mast_Traces_Displayer and Mast_Model_editor are not yet available.
+
+The Mast-File has to correspond to Mast-1.2.2 or minor version.
+
+XML format and Mast special format are supported.
+
+It don't support:
+	
+	- Scheduling_servers based on Sporadic Scheduling Policy
+        - Networks with Full-Duplex transmission.
+	- Networks with drivers of Character_Packet_Driver type. 
+
+A Mast Model must satisfy the following restrictions in order to be able to be simulated with Sim_Mast:
+
+	- The output events of a Query_Server only must be sent to activity inputs.
+	- Every Activity whose operation represent the sending of a message through a network, 
+          must have an exclusive scheduling server and must be placed between two activities.
+	- The operation that represents a message sent through a network has to be a Simple_operation.
+	- The Avg_Interarrival value of external events must not be 0 (the default value in MAST is 0).
+	- It can not be two drivers with the same Packet_Server name.
+	- The Polling Period value of a Polling Server and the Replenishment Period of a Sporadic Server 
+	  must not be 0 (the default value in MAST is 0)
+
+
+      
+
+
+

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+	ArchE
+	Copyright (c) 2012 Carnegie Mellon University.
+	All Rights Reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice,
+	this list of conditions and the following acknowledgments and disclaimers.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. All advertising materials for third-party software mentioning features or
+	use of this software must display the following disclaimer:
+
+	“Neither Carnegie Mellon University nor its Software Engineering Institute
+	have reviewed or endorsed this software”
+
+	4. The names “Carnegie Mellon University,” and/or “Software Engineering
+	Institute" shall not be used to endorse or promote products derived from
+	this software without prior written permission. For written permission,
+	please contact permission@sei.cmu.edu.
+
+	5. Redistributions of any form whatsoever must retain the following
+	acknowledgment:
+
+	Copyright 2012 Carnegie Mellon University.
+
+	This material is based upon work funded and supported by the United States
+	Department of Defense under Contract No. FA8721-05-C-0003 with Carnegie
+	Mellon University for the operation of the Software Engineering Institute, a
+	federally funded research and development center.
+
+	NO WARRANTY
+
+	THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL
+	IS FURNISHED ON AN “AS-IS” BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO
+	WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER
+	INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR PURPOSE OR
+	MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+	CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH
+	RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+-->
+<plugin
+   id="SEI.Perf_RF"
+   name="Performance Reasoning Framework Plug-in"
+   version="0.3.3"
+   provider-name="SEI"
+   class="edu.cmu.sei.pacc.perf.PerformanceRFPlugin">
+
+   <runtime>
+      <library name="Perf_RF.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+   	  <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.ui.console"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.views"/>
+      <import plugin="SEI.PECT.util"/>
+<!--      <import plugin="SEI.Perf_RF.CclToIcm"/>  -->
+<!--      <import plugin="org.aspectj.runtime"/>  -->
+<!--      <import plugin="SEI.PECT.Aspects"/>    -->
+   </requires>
+   
+   <extension-point id="designInput" name="Design Input" schema="schema/designInput.exsd"/>
+
+   <!-- POPUP MENU OPTION FOR design FILES: Performance RF Analysis...-->
+   <!-- TODO: menubarPath should be the standard "additions" to make  -->
+   <!-- this plug-in independent of the PECT IDE. It is pointing to   -->
+   <!-- menubarPath "pect.analysis/group1" so that it appears as a    -->
+   <!-- sub-option of "Analyze Using...", defined in SEI.PECT.UI      -->
+   <!-- Performance analysis is enabled for all kinds of files. When  -->
+   <!-- it's executed, the action handler first checks if there's a   -->
+   <!-- plug-in to handle that kind of file. -->
+   
+   <!-- MULTI-PAGE EDITOR FOR .model FILES (PERSISTED PERFORMANCE MODELS)  -->
+   <!-- One page has the xml source and the other displays (read-only) the model graphically -->
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Performance Model Editor"
+            extensions="model"
+            icon="icons/modelEditor.gif"
+            contributorClass="edu.cmu.sei.pacc.perf.ui.editors.ModelEditorContributor"
+            class="edu.cmu.sei.pacc.perf.ui.editors.ModelEditor"
+            id="SEI.Perf-RF.ModelEditor">
+      </editor>
+   </extension>
+   
+   <!-- Preference Page Extension -->
+   <extension point="org.eclipse.ui.preferencePages">
+      <page
+         name="Performance RF"
+         class="edu.cmu.sei.pacc.perf.ui.preferences.PerformanceRFPreferencePage"
+         id="SEI.Perf_RF.Preferences"
+         category="SEI.PECT.UI.Preferences">
+      </page>  	 		
+   </extension>
+   <extension point="org.eclipse.core.runtime.preferences">
+			<initializer class="edu.cmu.sei.pacc.perf.ui.preferences.PerformanceRFPreferenceInitializer"/>
+   </extension>
+
+   <!-- VIEW -->
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+         name="Performance Evaluation Result"
+         category="SEI.PECT.UI.Views"
+         icon = "icons/modelEditor.gif"
+         class="edu.cmu.sei.pacc.perf.eval.viewers.EvaluationResultViewer"
+         id="SEI.Perf-RF.EvaluationViewer">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="SEI.Perf-RF.Analysis"
+            objectClass="org.eclipse.core.resources.IFile">
+         <visibility>
+                <objectState name="extension" value="ccl"/>
+<!--                <objectState name="extension" value="aadl"/> -->
+         </visibility>
+         <action
+               class="edu.cmu.sei.pacc.perf.actions.AnalysisAction"
+               enablesFor="+"
+               id="SEI.Perf-RF.BatchAnalysisAction"
+               label="Performance RF..."
+               menubarPath="pect.analysis/group1"
+               tooltip="%analysis.tooltip">
+         </action>
+      </objectContribution>
+   </extension>
+   
+   
+</plugin>

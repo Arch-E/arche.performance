@@ -1,0 +1,1745 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+ 
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ 
+  <meta name="ProgId" content="Word.Document">
+ 
+  <meta name="Generator" content="Microsoft Word 9">
+ 
+  <meta name="Originator" content="Microsoft Word 9">
+ 
+  <link rel="File-List" href="./SIM_Mast_Especification_archivos/filelist.xml">
+ 
+  <link rel="Edit-Time-Data" href="./SIM_Mast_Especification_archivos/editdata.mso">
+ 
+  <link rel="OLE-Object-Data" href="./SIM_Mast_Especification_archivos/oledata.mso">
+ <!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><title>SIM_MAST: Simulator of MAST Models</title>
+  
+  <!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>JMD</o:Author>
+  <o:LastAuthor>patricia</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>863</o:TotalTime>
+  <o:Created>2003-04-29T15:33:00Z</o:Created>
+  <o:LastSaved>2003-04-29T15:33:00Z</o:LastSaved>
+  <o:Pages>6</o:Pages>
+  <o:Words>1276</o:Words>
+  <o:Characters>7278</o:Characters>
+  <o:Company>UC</o:Company>
+  <o:Lines>60</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>8937</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>BestFit</w:Zoom>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml><![endif]--> 
+  <style>
+
+<!--
+
+ /* Font Definitions */
+
+@font-face
+
+	{font-family:Wingdings;
+
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+
+	mso-font-charset:2;
+
+	mso-generic-font-family:auto;
+
+	mso-font-pitch:variable;
+
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+
+ /* Style Definitions */
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+
+	{mso-style-parent:"";
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";
+
+	vertical-align:sub;}
+
+h1
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:1;
+
+	font-size:14.0pt;
+
+	mso-bidi-font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-font-kerning:0pt;
+
+	mso-ansi-language:EN-US;}
+
+h2
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:2;
+
+	font-size:24.0pt;
+
+	mso-bidi-font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:normal;}
+
+h3
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:3;
+
+	font-size:8.0pt;
+
+	mso-bidi-font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-ansi-language:EN-US;}
+
+h4
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:4;
+
+	font-size:10.0pt;
+
+	mso-bidi-font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-ansi-language:EN-US;}
+
+h5
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:5;
+
+	font-size:14.0pt;
+
+	mso-bidi-font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	font-weight:normal;}
+
+h6
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:6;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";}
+
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	mso-pagination:widow-orphan;
+
+	page-break-after:avoid;
+
+	mso-outline-level:7;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";
+
+	color:green;
+
+	font-weight:bold;}
+
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+
+	{mso-style-next:Normal;
+
+	margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";
+
+	font-weight:bold;}
+
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+
+	{margin:0cm;
+
+	margin-bottom:.0001pt;
+
+	text-align:justify;
+
+	mso-pagination:widow-orphan;
+
+	font-size:12.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";}
+
+a:link, span.MsoHyperlink
+
+	{color:blue;
+
+	text-decoration:underline;
+
+	text-underline:single;}
+
+a:visited, span.MsoHyperlinkFollowed
+
+	{color:purple;
+
+	text-decoration:underline;
+
+	text-underline:single;}
+
+@page Section1
+
+	{size:595.3pt 841.9pt;
+
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;
+
+	mso-header-margin:35.4pt;
+
+	mso-footer-margin:35.4pt;
+
+	mso-paper-source:0;}
+
+div.Section1
+
+	{page:Section1;}
+
+ /* List Definitions */
+
+@list l0
+
+	{mso-list-id:282351698;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:564938646 -676800762 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l0:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:94.5pt;
+
+	mso-level-number-position:left;
+
+	margin-left:94.5pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	text-decoration:none;
+
+	text-underline:none;}
+
+@list l1
+
+	{mso-list-id:282732218;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:-390946462 1773451234 201981955 1773451234 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l1:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";
+
+	mso-ansi-font-weight:bold;}
+
+@list l1:level2
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:72.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l1:level3
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:108.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";
+
+	mso-ansi-font-weight:bold;}
+
+@list l2
+
+	{mso-list-id:323046377;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:613816046 -867040314 201981955 -867040314 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l2:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:39.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:39.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";}
+
+@list l2:level2
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:75.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:75.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l2:level3
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:111.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:111.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";}
+
+@list l3
+
+	{mso-list-id:773938535;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:-147432860 1773451234 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l3:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:75.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:75.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";
+
+	mso-ansi-font-weight:bold;}
+
+@list l4
+
+	{mso-list-id:828061780;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:1416531472 -676800762 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l4:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:94.5pt;
+
+	mso-level-number-position:left;
+
+	margin-left:94.5pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	text-decoration:none;
+
+	text-underline:none;}
+
+@list l5
+
+	{mso-list-id:841816894;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:613816046 201981955 201981955 -867040314 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l5:level1
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:39.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:39.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l5:level2
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:75.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:75.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l5:level3
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:111.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:111.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";}
+
+@list l6
+
+	{mso-list-id:1071466376;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:-924175776 -676800762 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l6:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:94.5pt;
+
+	mso-level-number-position:left;
+
+	margin-left:94.5pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	text-decoration:none;
+
+	text-underline:none;}
+
+@list l7
+
+	{mso-list-id:1082604093;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:179240726 201981953 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l7:level1
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:\F0B7;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;
+
+	font-family:Symbol;}
+
+@list l8
+
+	{mso-list-id:1124884703;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:1188736744 201981967 201981977 201981979 201981967 201981977 201981979 201981967 201981977 201981979;}
+
+@list l8:level1
+
+	{mso-level-tab-stop:18.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:18.0pt;
+
+	text-indent:-18.0pt;}
+
+@list l9
+
+	{mso-list-id:1283223070;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:179240726 201981957 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l9:level1
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:\F0A7;
+
+	mso-level-tab-stop:36.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;
+
+	font-family:Wingdings;}
+
+@list l10
+
+	{mso-list-id:1284195478;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:-7191224 -676800762 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l10:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:107.05pt;
+
+	mso-level-number-position:left;
+
+	margin-left:107.05pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	text-decoration:none;
+
+	text-underline:none;}
+
+@list l11
+
+	{mso-list-id:1310091304;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:126377256 201981957 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l11:level1
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:\F0A7;
+
+	mso-level-tab-stop:57.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:57.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:Wingdings;}
+
+@list l12
+
+	{mso-list-id:1508400605;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:613816046 201981955 201981955 -867040314 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l12:level1
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:39.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:39.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l12:level2
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:75.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:75.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l12:level3
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:111.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:111.0pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Times New Roman";
+
+	mso-fareast-font-family:"Times New Roman";}
+
+@list l13
+
+	{mso-list-id:1569881387;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:1355943986 201981955 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l13:level1
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:71.4pt;
+
+	mso-level-number-position:left;
+
+	margin-left:71.4pt;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+@list l14
+
+	{mso-list-id:1635795865;
+
+	mso-list-type:hybrid;
+
+	mso-list-template-ids:826172954 -815629754 201981955 201981957 201981953 201981955 201981957 201981953 201981955 201981957;}
+
+@list l14:level1
+
+	{mso-level-start-at:0;
+
+	mso-level-number-format:bullet;
+
+	mso-level-text:-;
+
+	mso-level-tab-stop:30.0pt;
+
+	mso-level-number-position:left;
+
+	margin-left:30.0pt;
+
+	text-indent:-18.0pt;}
+
+@list l14:level2
+
+	{mso-level-number-format:bullet;
+
+	mso-level-text:o;
+
+	mso-level-tab-stop:72.0pt;
+
+	mso-level-number-position:left;
+
+	text-indent:-18.0pt;
+
+	font-family:"Courier New";
+
+	mso-bidi-font-family:"Times New Roman";}
+
+ol
+
+	{margin-bottom:0cm;}
+
+ul
+
+	{margin-bottom:0cm;}
+
+-->
+
+  </style> <!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050">
+  <o:colormru v:ext="edit" colors="#ffc,#f8f8f8,#ddd,#b2b2b2,#eaeaea"/>
+  <o:colormenu v:ext="edit" fillcolor="#ff9" strokecolor="#f8f8f8"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:regrouptable v:ext="edit">
+   <o:entry new="1" old="0"/>
+   <o:entry new="2" old="0"/>
+   <o:entry new="3" old="0"/>
+   <o:entry new="4" old="0"/>
+   <o:entry new="5" old="0"/>
+   <o:entry new="6" old="0"/>
+   <o:entry new="7" old="0"/>
+   <o:entry new="8" old="0"/>
+   <o:entry new="9" old="0"/>
+   <o:entry new="10" old="0"/>
+   <o:entry new="11" old="0"/>
+   <o:entry new="12" old="0"/>
+   <o:entry new="13" old="12"/>
+   <o:entry new="14" old="0"/>
+   <o:entry new="15" old="14"/>
+   <o:entry new="16" old="0"/>
+   <o:entry new="17" old="0"/>
+   <o:entry new="18" old="0"/>
+   <o:entry new="19" old="18"/>
+  </o:regrouptable>
+ </o:shapelayout></xml><![endif]--></head>
+
+<body lang="ES" link="blue" vlink="purple" style="">
+  
+<div class="Section1">  
+<h1 style="text-align: justify;"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1244" type="#_x0000_t75" style='position:absolute;
+ left:0;text-align:left;margin-left:0;margin-top:-.25pt;width:45.65pt;height:100.95pt;
+ z-index:3;mso-position-horizontal:left'>
+ <v:imagedata src="./SIM_Mast_Especification_archivos/image001.wmz" o:title="mast"/>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><!--[if !vml]--><img width="61" height="134" src="./SIM_Mast_Especification_archivos/image002.gif" align="left" hspace="12" v:shapes="_x0000_s1244">
+<!--[endif]--><!--[if gte vml 1]><v:shapetype id="_x0000_t202"
+ coordsize="21600,21600" o:spt="202" path="m0,0l0,21600,21600,21600,21600,0xe">
+ <v:stroke joinstyle="miter"/>
+ <v:path gradientshapeok="t" o:connecttype="rect"/>
+</v:shapetype><v:shape id="_x0000_s1243" type="#_x0000_t202" style='position:absolute;
+ left:0;text-align:left;margin-left:337.95pt;margin-top:3.1pt;width:88.7pt;
+ height:88.05pt;z-index:2' fillcolor="#ff9" stroked="f">
+ <v:textbox>
+  <![if !mso]>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div>
+    <p class=MsoNormal><i><span style='font-size:10.0pt;mso-bidi-font-size:
+    12.0pt;font-family:Arial;vertical-align:baseline;vertical-align:baseline'><a
+    href="#Objetivos">Objetivos</a><o:p></o:p></span></i></p>
+    <p class=MsoNormal><i><span style='font-size:10.0pt;mso-bidi-font-size:
+    12.0pt;font-family:Arial;vertical-align:baseline;vertical-align:baseline'><a
+    href="#CasosUso">UseCases</a><o:p></o:p></span></i></p>
+    <p class=MsoNormal><i><span style='font-size:10.0pt;mso-bidi-font-size:
+    12.0pt;font-family:Arial;vertical-align:baseline;vertical-align:baseline'><a
+    href="#Comonentes">Componentes</a></span></i><i><sub><span
+    style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Arial'> <o:p></o:p></span></sub></i></p>
+    <p class=MsoNormal><i><span lang=EN-US style='font-size:10.0pt;mso-bidi-font-size:
+    12.0pt;font-family:Arial;mso-ansi-language:EN-US;vertical-align:baseline;
+    vertical-align:baseline'><a href="#InterfazUsuario">Interfaz usuario</a><o:p></o:p></span></i></p>
+    <p class=MsoNormal><i><span style='font-size:10.0pt;mso-bidi-font-size:
+    12.0pt;font-family:Arial;vertical-align:baseline;vertical-align:baseline'><a
+    href="#Profiles">Profiles</a></span></i><i><span lang=EN-US
+    style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Arial;
+    mso-ansi-language:EN-US'><o:p></o:p></span></i></p>
+    <p class=MsoNormal><i><span style='font-size:10.0pt;mso-bidi-font-size:
+    12.0pt;font-family:Arial;vertical-align:baseline;vertical-align:baseline'><a
+    href="#Restricciones">Restriction</a></span></i></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  <![endif]></v:textbox>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><!--[if !vml]--></h1>
+<table cellpadding="2" cellspacing="2" border="0" width="100%">
+  <tbody>
+    <tr>
+      <td valign="top">
+      <h4 align="center" style="text-align: center;"><br>
+      <span lang="EN-US" style="font-size: 16pt; color: green;"></span></h4>
+      <h4 align="center" style="text-align: center;"><span lang="EN-US" style="font-size: 16pt; color: green;">SIM_MAST:<o:p></o:p></span></h4>
+  
+      <h4 align="center" style="text-align: center;"><span lang="EN-US" style="font-size: 16pt; color: green;">Simulator of MAST Models</span></h4>
+  <b><span lang="EN-US" style="font-size: 10pt; vertical-align: baseline;"><!--[if !supportEmptyParas]--> </span></b><br>
+      </td>
+      <td valign="top" bgcolor="#ffff99"><font color="#3366ff"><i><u><a href="#Objetivos">Objetivos</a><br>
+      <a href="#CasosUso">UseCases</a><br>
+      <a href="#Comonentes">Componentes</a><br>
+      <a href="#Profiles">Profiles</a><br>
+      <a href="#Restricciones">Restrictions</a></u></i></font><br>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h1 style="text-align: justify;"><!--[endif]--><span style=""><span style="">                  </span><o:p></o:p></span></h1>
+  
+<h3><span style="font-size: 10pt;"><!--[if !supportEmptyParas]--><!--[endif]--><o:p></o:p></span></h3>
+  
+<h4 align="center" style="text-align: center;"><span lang="EN-US" style="font-size: 16pt; color: green;"><br>
+</span></h4>
+<p class="MsoNormal" style="text-align: justify;"><b><span lang="EN-US" style="font-size: 10pt; vertical-align: baseline;"><!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><b><span lang="EN-US" style="font-size: 10pt; vertical-align: baseline;"><!--[if !supportEmptyParas]--><!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><b><span lang="EN-US" style="font-size: 10pt; vertical-align: baseline;"><!--[if !supportEmptyParas]--><!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><b><span lang="EN-US" style="font-size: 10pt; vertical-align: baseline;"><!--[if !supportEmptyParas]--><!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><b><span lang="EN-US" style="font-size: 8pt; vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;">Sim_Mast es una herramienta que ejecuta
+la simulación de un modelo MAST, proporcionando información sobre:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->El cumplimiento de los requerimientos temporales 
+establecidos en el modelo.<b><o:p></o:p></b></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->La respuesta temporal que proporciona en el peor,
+mejor o caso promedio.<b><o:p></o:p></b></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Los niveles de utilización de los recursos.<b><o:p></o:p></b></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Trazas de ejecución.<b><o:p></o:p></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><b><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoHeading7"><a name="Objetivos"></a><span style="font-size: 14pt;">Objetivos<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;">Los objetivos para los que se ha desarrollado
+el Simulador son:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Estimar el comportamiento del sistema modelado
+en aquellos casos en que no existen herramientas analíticas de análisis.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Evaluar la eficiencia de otros métodos de diseño
+y análisis disponibles.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Validar estrategias de análisis que se estén desarrollando,
+identificando, en su caso, las situaciones de fallo que presenten.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<h5><a name="CasosUso"></a><b><span style="color: green;">Casos de uso<o:p></o:p></span></b></h5>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><!--[if gte vml 1]><o:wrapblock><v:shape
+  id="_x0000_s1245" type="#_x0000_t75" style='position:absolute;left:0;
+  text-align:left;margin-left:66.05pt;margin-top:22.35pt;width:298.3pt;
+  height:152.35pt;z-index:4'>
+  <v:imagedata src="./SIM_Mast_Especification_archivos/image004.wmz" o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><!--[if !vml]--><span style="">  
+<table cellpadding="0" cellspacing="0">
+   <tbody>
+    <tr>
+    <td width="88" height="0"><br>
+      </td>
+   </tr>
+   <tr>
+    <td><br>
+      </td>
+    <td><img width="398" height="203" src="./SIM_Mast_Especification_archivos/image005.gif" v:shapes="_x0000_s1245">
+      </td>
+   </tr>
+  
+  </tbody>
+</table>
+  </span><!--[endif]--><!--[if gte vml 1]></o:wrapblock><![endif]--><br style="" clear="all">
+ <span style="vertical-align: baseline;">La herramienta se destina a dos
+posibles usuarios:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->El <b>diseñador</b> que necesite conocer el comportamiento
+de un sistema cuyo comportamiento temporal ha sido previamente modelado con
+Mast. El diseñador necesitará la ejecución de la simulación del modelo y
+la posterior visualización de los resultados que se obtengan.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 3.3pt; text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><b>Herramientas automáticas</b> destinadas a implementar
+procedimientos de diseño o de evaluación de otras herramientas de análisis.
+En este caso, se invocará iterativamente la ejecución de la simulación sobre
+conjuntos de modelos que genera la herramienta.<span style="">   </span><o:p></o:p></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoCaption" style="text-align: justify;"><a name="Comonentes"></a><span style="font-size: 14pt; color: green;">Componentes<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;">La herramienta se proporciona como un
+conjunto de cuatro programas ejecutables:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><b>Sim_Mast_Launcher:</b> Es una sencilla aplicación 
+GUI que permite invocar la macro que define los parámetros de ejecución de
+una simulación. <o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><b>Sim_Mast_Simulator:</b> Es el programa que
+ejecuta la simulación del modelo. <o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><b>Mast_Results_Displayer:</b> Herramienta GUI
+que visualiza gráfica y tabularmente los resultados de la simulación.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><b>Mast_Traces_Result:</b> Herramienta GUI que 
+visualiza gráficamente las trazas generadas por la simulación.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><!--[if gte vml 1]><o:wrapblock><v:group
+  id="_x0000_s1242" style='position:absolute;left:0;text-align:left;
+  margin-left:40.15pt;margin-top:.05pt;width:358.8pt;height:443.6pt;z-index:1'
+  coordorigin="2736,5833" coordsize="6379,7702">
+  <v:line id="_x0000_s1232" style='position:absolute' from="3231,8156" to="3250,12479"
+   strokeweight="1.5pt">
+   <v:stroke startarrow="open" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1227" style='position:absolute' from="4714,8172"
+   to="6688,12460" strokeweight="1.5pt">
+   <v:stroke startarrow="open" endarrow="open"/>
+  </v:line><v:rect id="_x0000_s1026" style='position:absolute;left:2932;top:6596;
+   width:2361;height:1558' o:regroupid="11" fillcolor="#ffc">
+   <v:textbox inset=",10.3mm">
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><span
+      style='vertical-align:baseline;vertical-align:baseline'>Sim_Mast_Launcher</span></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:rect><v:line id="_x0000_s1038" style='position:absolute;flip:y' from="5306,6540"
+   to="6343,7025" o:regroupid="10" strokeweight="1.5pt">
+   <v:stroke startarrow="open" endarrow="open"/>
+  </v:line><v:group id="_x0000_s1221" style='position:absolute;left:4430;top:8898;
+   width:2579;height:456' coordorigin="8808,9108" coordsize="2579,456">
+   <v:group id="_x0000_s1214" style='position:absolute;left:8808;top:9108;
+    width:2578;height:452' coordorigin="6631,7769" coordsize="2578,452">
+    <v:shape id="_x0000_s1215" style='position:absolute;left:6631;top:7769;
+     width:2578;height:452' coordsize="2578,452" path="m0,0l2394,,2578,184,2578,452,,452,,0xe">
+     <v:path arrowok="t"/>
+    </v:shape><v:shapetype id="_x0000_t6" coordsize="21600,21600" o:spt="6"
+     path="m0,0l0,21600,21600,21600xe">
+     <v:stroke joinstyle="miter"/>
+     <v:path gradientshapeok="t" o:connecttype="custom" o:connectlocs="0,0;0,10800;0,21600;10800,21600;21600,21600;10800,10800"
+      textboxrect="1800,12600,12600,19800"/>
+    </v:shapetype><v:shape id="_x0000_s1216" type="#_x0000_t6" style='position:absolute;
+     left:9007;top:7769;width:202;height:184' fillcolor="#ddd"/>
+   </v:group><v:rect id="_x0000_s1192" style='position:absolute;left:8809;
+    top:9112;width:2578;height:452' filled="f" stroked="f">
+    <v:textbox>
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal align=center style='text-align:center'><span
+       style='vertical-align:baseline;vertical-align:baseline'>Simulation
+       Parameters <o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:rect></v:group><v:rect id="_x0000_s1199" style='position:absolute;
+   left:2821;top:9944;width:2361;height:1022' fillcolor="#ffc">
+   <v:textbox inset=",5.3mm">
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><span
+      style='vertical-align:baseline;vertical-align:baseline'>Sim_Mast_Simulator</span></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:rect><v:rect id="_x0000_s1200" style='position:absolute;left:5867;top:5833;
+   width:1943;height:704' fillcolor="#ffc">
+   <v:textbox inset=",3.3mm">
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><span
+      style='vertical-align:baseline;vertical-align:baseline'>Sim_Mast_Help</span></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:rect><v:rect id="_x0000_s1201" style='position:absolute;left:2736;top:12505;
+   width:2595;height:1022' fillcolor="#ffc">
+   <v:textbox inset=",5.3mm">
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><span
+      style='vertical-align:baseline;vertical-align:baseline'>Mast_Result_Viewer</span></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:rect><v:rect id="_x0000_s1202" style='position:absolute;left:6125;top:12513;
+   width:2662;height:1022' fillcolor="#ffc">
+   <v:textbox inset=",5.3mm">
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><span
+      style='vertical-align:baseline;vertical-align:baseline'>Mast_Trace_Displayer</span></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:rect><v:rect id="_x0000_s1203" style='position:absolute;left:6520;top:7517;
+   width:2595;height:1022' fillcolor="#ffc">
+   <v:textbox inset=",5.3mm">
+    <![if !mso]>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div>
+      <p class=MsoNormal align=center style='text-align:center'><span
+      style='vertical-align:baseline;vertical-align:baseline'>Mast_Model_Editor</span></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    <![endif]></v:textbox>
+  </v:rect><v:group id="_x0000_s1218" style='position:absolute;left:5890;top:11384;
+   width:2597;height:458' coordorigin="6380,7233" coordsize="2597,458">
+   <v:group id="_x0000_s1207" style='position:absolute;left:6380;top:7233;
+    width:2578;height:452' coordorigin="6631,7769" coordsize="2578,452">
+    <v:shape id="_x0000_s1205" style='position:absolute;left:6631;top:7769;
+     width:2578;height:452' coordsize="2578,452" path="m0,0l2394,,2578,184,2578,452,,452,,0xe">
+     <v:path arrowok="t"/>
+    </v:shape><v:shape id="_x0000_s1206" type="#_x0000_t6" style='position:absolute;
+     left:9007;top:7769;width:202;height:184' fillcolor="#ddd"/>
+   </v:group><v:rect id="_x0000_s1204" style='position:absolute;left:6399;
+    top:7239;width:2578;height:452' filled="f" stroked="f">
+    <v:textbox>
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal align=center style='text-align:center'><span
+       style='vertical-align:baseline;vertical-align:baseline'>Traces File <o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:rect></v:group><v:line id="_x0000_s1226" style='position:absolute;
+   flip:x' from="4058,8167" to="4058,9925" strokeweight="1.5pt">
+   <v:stroke startarrow="open" endarrow="open"/>
+  </v:line><v:group id="_x0000_s1230" style='position:absolute;left:6327;top:9652;
+   width:2579;height:452' coordorigin="6696,9627" coordsize="2579,452">
+   <v:shape id="_x0000_s1209" style='position:absolute;left:6696;top:9627;
+    width:2578;height:452;mso-position-horizontal:absolute;
+    mso-position-vertical:absolute' coordsize="2578,452" o:regroupid="17"
+    path="m0,0l2394,,2578,184,2578,452,,452,,0xe">
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s1210" type="#_x0000_t6" style='position:absolute;
+    left:9073;top:9628;width:202;height:184' o:regroupid="17" fillcolor="#ddd"/>
+   <v:rect id="_x0000_s1188" style='position:absolute;left:7233;top:9708;
+    width:1440;height:301' o:regroupid="17" filled="f" strokecolor="white">
+    <v:textbox inset="0,0,0,0">
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal align=center style='text-align:center'><span
+       style='vertical-align:baseline;vertical-align:baseline'>Model File<o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:rect></v:group><v:line id="_x0000_s1231" style='position:absolute;
+   flip:x y' from="5278,7733" to="6499,8051" strokeweight="1.5pt">
+   <v:stroke startarrow="open" endarrow="open"/>
+  </v:line><v:group id="_x0000_s1233" style='position:absolute;left:2739;top:11380;
+   width:2584;height:464' coordorigin="2790,11278" coordsize="2584,464">
+   <v:shape id="_x0000_s1212" style='position:absolute;left:2790;top:11290;
+    width:2578;height:452' coordsize="2578,452" o:regroupid="19" path="m0,0l2394,,2578,184,2578,452,,452,,0xe">
+    <v:path arrowok="t"/>
+   </v:shape><v:shape id="_x0000_s1213" type="#_x0000_t6" style='position:absolute;
+    left:5166;top:11290;width:202;height:184' o:regroupid="19" fillcolor="#ddd"/>
+   <v:rect id="_x0000_s1191" style='position:absolute;left:2796;top:11278;
+    width:2578;height:452' o:regroupid="18" filled="f" stroked="f">
+    <v:textbox>
+     <![if !mso]>
+     <table cellpadding=0 cellspacing=0 width="100%">
+      <tr>
+       <td><![endif]>
+       <div>
+       <p class=MsoNormal align=center style='text-align:center'><span
+       style='vertical-align:baseline;vertical-align:baseline'>Result File<o:p></o:p></span></p>
+       </div>
+       <![if !mso]></td>
+      </tr>
+     </table>
+     <![endif]></v:textbox>
+   </v:rect></v:group><v:line id="_x0000_s1234" style='position:absolute'
+   from="7686,8540" to="7686,9645" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" startarrow="open" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1235" style='position:absolute' from="5012,8127"
+   to="5833,8880" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1236" style='position:absolute;flip:x' from="4716,9338"
+   to="5771,9907" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1237" style='position:absolute;flip:x' from="5157,9880"
+   to="6346,10348" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1238" style='position:absolute;flip:x' from="4058,10973"
+   to="4075,11392" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1239" style='position:absolute' from="4751,10979"
+   to="5989,11414" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1240" style='position:absolute;flip:x' from="4081,11832"
+   to="4081,12469" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><v:line id="_x0000_s1241" style='position:absolute;flip:x' from="7252,11870"
+   to="7252,12507" strokeweight="2.25pt">
+   <v:stroke dashstyle="1 1" endarrow="open"/>
+  </v:line><w:wrap type="topAndBottom"/>
+ </v:group><![endif]--><!--[if !vml]--><span style="">  
+<table cellpadding="0" cellspacing="0" align="left">
+   <tbody>
+    <tr>
+    <td width="53" height="0"><br>
+      </td>
+   </tr>
+   <tr>
+    <td><br>
+      </td>
+    <td><img width="482" height="595" src="./SIM_Mast_Especification_archivos/image006.gif" v:shapes="_x0000_s1242 _x0000_s1232 _x0000_s1227 _x0000_s1026 _x0000_s1038 _x0000_s1221 _x0000_s1214 _x0000_s1215 _x0000_s1216 _x0000_s1192 _x0000_s1199 _x0000_s1200 _x0000_s1201 _x0000_s1202 _x0000_s1203 _x0000_s1218 _x0000_s1207 _x0000_s1205 _x0000_s1206 _x0000_s1204 _x0000_s1226 _x0000_s1230 _x0000_s1209 _x0000_s1210 _x0000_s1188 _x0000_s1231 _x0000_s1233 _x0000_s1212 _x0000_s1213 _x0000_s1191 _x0000_s1234 _x0000_s1235 _x0000_s1236 _x0000_s1237 _x0000_s1238 _x0000_s1239 _x0000_s1240 _x0000_s1241">
+      </td>
+   </tr>
+  
+  </tbody>
+</table>
+  </span><!--[endif]--><!--[if gte vml 1]></o:wrapblock><![endif]--><br style="" clear="all">
+ <!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  <br style="" clear="all">
+  
+<h6><a name="InterfazUsuario"></a><span style="font-size: 14pt; color: green;">Interfaz con usuario<o:p></o:p></span></h6>
+  
+<p class="MsoNormal" style="text-align: justify;"><b><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText">El módulo<b> Sim_Mast_Launcher</b> es un programa
+GUI que permite a través de una ventana seleccionar el modelo MAST que va
+ser estudiado, seleccionar los parámetros de simulación<span style="">  </span>e
+invocar sobre él las diferentes herramientas.</p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;">La interfaz de usuario se basa en una
+ventana gráfica desde la que se puede invocar diferentes herramientas:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoBodyText"><b>Main_Windows:</b> Contiene controles para definir
+todos los elementos que son necesarios para lanzar una ejecución de simulación.</p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><b><span style=""> </span>Directory</b>: Campo de texto que define el directorio
+que se utiliza para construir el pathname de los ficheros Model File, y los
+derivados de Campo Results File. </p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><b>Model 
+File</b>: Campo de texto que define el fichero del modelo MAST que se utiliza 
+como entrada al simulador. El pathname absoluto del Fichero de entrada es 
+&lt;Directory&gt;&amp;’\’&amp;&lt;Model File&gt;&amp;”.mdl”. Por ejemplo
+en el caso de la figura sería: “c:\Temp\Telerobot.mdl”</p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><b>Results 
+File</b>: Campo de texto que define los nombres de los ficheros que se generan 
+como salida de la ejecución de Simulador. El pathname absoluto de los ficheros 
+de salida serían &lt;Directory&gt;&amp;’/’&amp;&lt;Result Files&gt;&amp;{”.res”|”log”|”bak”}.
+Por ejemplo en el caso de la figura, el fichero de resultados sería: “c:\Temp\Telerobot_1.res”</p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><b>Time</b>: 
+Campo de texto que define el tiempo de simulación máximo en el que se concluye 
+la ejecución de la simulación. En el caso de algunos profiles es directamente 
+el tiempo de simulación, en otros casos es un tiempo de time out para el
+caso de que no se haya satisfecho el criterio ordinario de finalización.</p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 1cm; text-indent: -14.15pt;"><b>Profile</b>:<span style="">  </span>Etiqueta que especifica el perfil de resultados que se
+utiliza en la simulación. <span lang="EN-US" style="">Puede tomar los valores
+SCHEDULABILITY, VERIFICATION, EXHAUSTIVE. <o:p></o:p></span></p>
+  
+<p class="MsoBodyText"><span lang="EN-US" style=""><!--[if !supportEmptyParas]--> <img src="../../Documents%20and%20Settings/Administrador/Mis%20documentos/Mis%20im%E1genes/Dibujo.bmp" alt="screen" width="630" height="343">
+<!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoBodyText"><!--[if gte vml 1]><v:shape id="_x0000_i1025" type="#_x0000_t75"
+ style='width:425.25pt;height:212.25pt' o:ole="">
+ <v:imagedata src="./SIM_Mast_Especification_archivos/image007.wmz" o:title=""/>
+</v:shape><![endif]--><!--[if !vml]-->
+<!--[endif]--><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelDraw.Graphic.7" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1113142783">
+ </o:OLEObject>
+</xml><![endif]--><b><span lang="EN-US" style=""><o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText"><b><span lang="EN-US" style=""><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt; text-indent: -14.2pt;"><b>Buffer</b>: Define
+la longitud en bytes del buffer de logger que se utiliza. En el caso de buffer
+que se gestiones de forma acotado o circular, es la longitud del buffer, mientras
+que si se gestiona como ilimitado, representa la longitud de los bloques
+con que se almacenan en disco. Puede tomar los valores enumerados 512, 2K,
+8K y 32K</p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt; text-indent: -14.2pt;"><b>New model</b>: Botón
+que lanza el navegador que ayuda a la selección del fichero que se utiliza
+como modelo.<span style="">  </span></p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt; text-indent: -14.2pt;"><b>Default</b>: Botón
+que establece como nombre del fichero de resultados el nombre del fichero 
+de modelo seguido de un guión bajo y de un número,esto es, &lt;Model File&gt;&amp;’_’&amp;&lt;n&gt;’.
+La finalidad de este criterio es que la generación de resultados no elimine
+resultados previos.</p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt; text-indent: -14.2pt;"><b>From</b>: Botón que
+establece como nombre de modelo el fichero de respaldo que ha sido origen
+del fichero de resultados establecido. Este fichero es el que tiene como nombre
+el mismo que el fichero de resultados con la extensión ‘.bak’.</p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt;">El botón se deshabilita
+cuando se establece un nombre de fichero de resultados y no existe el correspondiente 
+fichero de respaldo. Se habilita cuando se ejecuta la simulación y se crea
+el fichero de respaldo, o cuando se cambia el nombre de ficheros de resultados
+y existe el fichero de respaldo.</p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt; text-indent: -14.2pt;"><b>Edit model</b>: Botón
+que lanza el editor del fichero de modelo (programa en desarrollo, por ahora
+establecerlo como inhabilitado). El editor lee el fichero establecido como
+modelo sea cual sea su extensión {‘.mdl’|’.bak’} y siempre guarda el fichero
+editado con extensión ‘.mdl’<span style="">  </span></p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><b>Execute</b>: Botón que ejecuta la simulación del 
+fichero establecido como modelo.</p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt;">Solo está habilitado
+si la extensión del fichero modelo es ‘.mdl’</p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><b>View Results</b>: Botón que lanza el visor de resultados.</p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt;">Solo está habilitado
+si existe el fichero de resultados con la extensión ‘.res’.<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText"><b><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></b></p>
+  
+<p class="MsoBodyText"><b>Display Traces</b>: Botón que lanza el visualizador 
+gráfico de trazas.</p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt;">Solo está habilitado
+si existe el fichero de resultados con la extensión ‘.log’.</p>
+  
+<p class="MsoBodyText" style="margin-left: 14.2pt;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><b>Exit</b>: Botón que finaliza el programa.<span style="">  </span><b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText"><b><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></b></p>
+  
+<p class="MsoBodyText"><b>Help</b>: Botón que visualiza una página .htlm
+con ayuda para manejar este programa.</p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><a name="Profiles"></a><b><span style="font-size: 14pt; color: green;">Profiles<o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText"><b><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></b></p>
+  
+<p class="MsoBodyText">Establece el objetivo para el que se invoca la simulación 
+del modelo. En función del profile se definen las magnitudes estadísticas
+que se evaluan, los mensajes de logging que se incluyen, la forma de gestionar
+el buffer de mensajes y el criterio de finalización de la simulación.<span style="">  </span></p>
+  
+<p class="MsoBodyText"><b><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></b></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;">SCHEDULABILITY_PROFILE: Tiene el objetivo
+de generar una información comparable a la que genera la herramienta de análisis
+de planificabilidad:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 14.2pt; text-align: justify; text-indent: -8.7pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">  
+</span></span><!--[endif]-->Monitoring:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Los eventos que tienen asignados Timing Requirement
+y los que son salida de segmento.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Los eventos que representan fin de una transacción
+(van incluidos en los que son salida de segmento).<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->El % de utilización de los recursos.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 30pt; text-align: justify; text-indent: -22.9pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">      
+</span></span><!--[endif]-->Logging:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Se generan mensajes cuando se incumplen un Timing 
+Requirement.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">      
+</span></span><!--[endif]-->Buffer Managing: <o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-US" style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">      
+</span></span><!--[endif]--><span lang="EN-US" style="">BOUNDED mode.<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">      
+</span></span><!--[endif]-->Finalizing criterion:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Cuando<span style="">  </span>cada cada transacción
+se haya concluido por cada uno de sus modos al menos un numero mínimo de
+veces, o como time out, cuando se alcance un tiempo máximo de simulación. 
+<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 7.1pt; text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;">VERIFICATION_PROFILE: Tiene el objetivo
+de localizar y justificar las situaciones en las que fallan el cumplimiento
+de los requerimientos temporales.<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">            
+</span></span><!--[endif]-->Monitoring:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Los eventos que tienen asignados Timing_Requirement
+y los que son salida de segmento.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Monitoriza el % de utilización de los recursos<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 1cm; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Logging:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Genera un mensaje si se incumple un Timing_Requirement.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Genera un mensaje por cada Flow_Event que se
+genera.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 1cm; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-US" style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><span lang="EN-US" style="">Buffer Managing:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span lang="EN-US" style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">    
+</span></span><!--[endif]--><span lang="EN-US" style=""><span style=""> </span>CIRCULAR
+mode.<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 1cm; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-US" style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><span lang="EN-US" style="">Finalizing criterion:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 39pt; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Cuando<span style="">  </span>cada cada transacción
+se haya concluido por cada uno de sus modos al menos un numero mínimo de
+veces, o cuando se incumple un Timing Requirement, o como time out, cuando
+se alcance un tiempo máximo de simulación. <o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21pt; text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="text-align: justify;"><span style="vertical-align: baseline;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></p>
+  
+<p class="MsoBodyText">EXHAUSTIVE_PROFILE: Tienen el objetivo de generar
+una información exhaustiva<span style="">  </span>sobre la ejecución de la
+simulación. </p>
+  
+<p class="MsoNormal" style="margin-left: 21.3pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">            
+</span></span><!--[endif]-->Monitoring:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Los eventos que tienen asignados Timing_Requirement
+y los que son salida de segmento.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Monitoriza el % de utilización de los recursos<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 1cm; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Logging:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Genera un mensaje si se incumple un Timing_Requirement.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Genera un mensaje por cada Evento que se genera.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">     
+</span></span><!--[endif]-->Genera un mensaje por cada cambio de estado de
+todos los Processing Resources, Shared_Resources ,Scheduling_Server, timers, 
+activities.<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 1cm; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-US" style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]--><span lang="EN-US" style="">Buffer Managing:<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 42.55pt; text-align: justify; text-indent: -14.2pt;"><!--[if !supportLists]--><span lang="EN-US" style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">    
+</span></span><!--[endif]--><span lang="EN-US" style=""><span style=""> </span>UNBOUNDED
+mode.<o:p></o:p></span></p>
+  
+<p class="MsoNormal" style="margin-left: 1cm; text-align: justify; text-indent: -18pt;"><!--[if !supportLists]--><span style="vertical-align: baseline;">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">         
+</span></span><!--[endif]-->Finalizing criterion:<o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 39pt; text-align: justify; text-indent: -10.65pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;; vertical-align: baseline;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">  
+</span></span><!--[endif]-->Cuando<span style="">  </span>cada cada transacción
+se haya concluido por cada uno de sus modos al menos un numero mínimo de
+veces, o cuando se incumple un Timing Requirement, o como time out, cuando
+se alcance un tiempo máximo de simulación. <o:p></o:p></p>
+  
+<p class="MsoNormal" style="margin-left: 21pt;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></p>
+  
+<p class="MsoBodyText"><a name="Restricciones"></a><b><span style="font-size: 14pt; color: green;">Restrictions<o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText"><b><span style="font-size: 14pt; color: green;"><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 36pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">          
+</span></span><!--[endif]-->Modelos no implementados<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Network con tipo de transimisión full-duplex<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-US" style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]--><span lang="EN-US" style="">Drivers de tipo Character_Packet_Driver.<b><o:p></o:p></b></span></p>
+  
+<p class="MsoBodyText"><b><span lang="EN-US" style=""><!--[if !supportEmptyParas]--> <!--[endif]--><o:p></o:p></span></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 36pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">          
+</span></span><!--[endif]-->Restricciones a los modelos<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 71.4pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Todos los canales de salida de un Query_server
+tienen que entrar en actividades.<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 71.4pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Cada Event_Handler tipo Simplex_FP_Packet_Dispatcher 
+(modelo de la actividad que realiza el envio de un mensaje en una network) 
+tiene que tener un server independiente.<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 71.4pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->La operación que lleva a cabo un Simplex_FP_Packet_Dispatcher
+ha de ser simple.<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 71.4pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Un Ev_H tipo Simplex_FP_Packet_Dispatcher ha
+de ir siempre entre dos Ev_H tipo Activity.<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText" style="margin-left: 71.4pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="font-family: &quot;Courier New&quot;;">o<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-stretch: normal; font-size-adjust: none;">       
+</span></span><!--[endif]-->Un Scheduling Server de tipo Sporadic ha de tener
+un número de Max_Pending_Requirements mayor que 1.<b><o:p></o:p></b></p>
+  
+<p class="MsoBodyText"><span style="">  </span></p>
+  
+<p class="MsoBodyText"><span style=""> </span><b><o:p></o:p></b></p>
+  </div>
+  <br>
+<br>
+</body></html>

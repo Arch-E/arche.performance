@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ArchE
+	Copyright (c) 2012 Carnegie Mellon University.
+	All Rights Reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice,
+	this list of conditions and the following acknowledgments and disclaimers.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. All advertising materials for third-party software mentioning features or
+	use of this software must display the following disclaimer:
+
+	“Neither Carnegie Mellon University nor its Software Engineering Institute
+	have reviewed or endorsed this software”
+
+	4. The names “Carnegie Mellon University,” and/or “Software Engineering
+	Institute" shall not be used to endorse or promote products derived from
+	this software without prior written permission. For written permission,
+	please contact permission@sei.cmu.edu.
+
+	5. Redistributions of any form whatsoever must retain the following
+	acknowledgment:
+
+	Copyright 2012 Carnegie Mellon University.
+
+	This material is based upon work funded and supported by the United States
+	Department of Defense under Contract No. FA8721-05-C-0003 with Carnegie
+	Mellon University for the operation of the Software Engineering Institute, a
+	federally funded research and development center.
+
+	NO WARRANTY
+
+	THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL
+	IS FURNISHED ON AN “AS-IS” BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO
+	WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER
+	INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR PURPOSE OR
+	MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+	CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH
+	RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+-->
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SEI.Perf-RF/src"
+    modelPluginID="SEI.Perf_RF" modelName="ICM" importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel>ICM.ecore</foreignModel>
+  <genPackages prefix="Icm" basePackage="edu.cmu.sei.pacc.perf" disposableProviderFactory="true"
+      ecorePackage="ICM.ecore#/">
+    <genEnums ecoreEnum="ICM.ecore#//SinkPinMode">
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SinkPinMode/asynch"/>
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SinkPinMode/mutex"/>
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SinkPinMode/reenter"/>
+    </genEnums>
+    <genEnums ecoreEnum="ICM.ecore#//SourcePinMode">
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SourcePinMode/unicast"/>
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SourcePinMode/multicast"/>
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SourcePinMode/synch"/>
+      <genEnumLiterals ecoreEnumLiteral="ICM.ecore#//SourcePinMode/reenter"/>
+    </genEnums>
+    <genClasses ecoreClass="ICM.ecore#//AssemblyInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//AssemblyInstance/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//AssemblyInstance/elements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//AssemblyInstance/connectionOverhead"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//AssemblyInstance/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//AssemblyInstance/mutexes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//AssemblyInstance/sourceFile"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//IcmComponent"/>
+    <genClasses ecoreClass="ICM.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Constant/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Constant/offset"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ICM.ecore#//Distribution">
+      <genOperations ecoreOperation="ICM.ecore#//Distribution/add">
+        <genParameters ecoreParameter="ICM.ecore#//Distribution/add/value"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ICM.ecore#//ElementInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//ElementInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//ElementInstance/nodeNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//ElementInstance/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//ElementInstance/typeNodeNum"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//ElementInstance/pins"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//Exponential">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Exponential/mean"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//Normal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Normal/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Normal/stdDev"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ICM.ecore#//PinInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//PinInstance/nodeNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//PinInstance/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ICM.ecore#//PinInstance/elementInstance"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ICM.ecore#//PinInstance/scenarios"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//PinInstance/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//SSComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SSComponent/budget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SSComponent/replenishmentPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SSComponent/backgroundPriority"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//IcmService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//IcmService/priority"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//ServiceSourcePinIcm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//ServiceSourcePinIcm/eventDistribution"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//ServiceSourcePinIcm/execTimeDistribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//ServiceSourcePinIcm/deadline"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//SinkPinInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SinkPinInstance/mode"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ICM.ecore#//SinkPinInstance/reactSources"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ICM.ecore#//SinkPinInstance/linkSources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ICM.ecore#//SinkPinInstance/execTimeDistribution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SinkPinInstance/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SinkPinInstance/downsamplingFactor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ICM.ecore#//SinkPinInstance/mutexes"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//SourcePinInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//SourcePinInstance/mode"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ICM.ecore#//SourcePinInstance/sinks"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference ICM.ecore#//SourcePinInstance/reactSinks"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//Uniform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Uniform/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Uniform/min"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//Unknown">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Unknown/mean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Unknown/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Unknown/max"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Scenario/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Scenario/number"/>
+    </genClasses>
+    <genClasses ecoreClass="ICM.ecore#//Mutex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ICM.ecore#//Mutex/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

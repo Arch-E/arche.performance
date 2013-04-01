@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ArchE
+	Copyright (c) 2012 Carnegie Mellon University.
+	All Rights Reserved.
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice,
+	this list of conditions and the following acknowledgments and disclaimers.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. All advertising materials for third-party software mentioning features or
+	use of this software must display the following disclaimer:
+
+	“Neither Carnegie Mellon University nor its Software Engineering Institute
+	have reviewed or endorsed this software”
+
+	4. The names “Carnegie Mellon University,” and/or “Software Engineering
+	Institute" shall not be used to endorse or promote products derived from
+	this software without prior written permission. For written permission,
+	please contact permission@sei.cmu.edu.
+
+	5. Redistributions of any form whatsoever must retain the following
+	acknowledgment:
+
+	Copyright 2012 Carnegie Mellon University.
+
+	This material is based upon work funded and supported by the United States
+	Department of Defense under Contract No. FA8721-05-C-0003 with Carnegie
+	Mellon University for the operation of the Software Engineering Institute, a
+	federally funded research and development center.
+
+	NO WARRANTY
+
+	THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL
+	IS FURNISHED ON AN “AS-IS” BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO
+	WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER
+	INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS FOR PURPOSE OR
+	MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+	CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH
+	RESPECT TO FREEDOM FROM PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+-->
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="ICM" size="1176,1145" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#/" metadata="emf-1.0" initialized="true" tag="5" key="3230303631303033205345492E506572662D5246">
+  <children xsi:type="editmodel:EnumerationEditModel" name="SinkPinMode" location="19,407" size="126,137" stereotype="enumeration" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinMode">
+    <children xsi:type="editmodel:CompartmentEditModel" size="67,54">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="asynch" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinMode/asynch">
+        <model href="ICM.ecore#//SinkPinMode/asynch"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="mutex" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinMode/mutex">
+        <model href="ICM.ecore#//SinkPinMode/mutex"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="reenter" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinMode/reenter">
+        <model href="ICM.ecore#//SinkPinMode/reenter"/>
+      </children>
+    </children>
+    <model href="ICM.ecore#//SinkPinMode"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" name="SourcePinMode" location="19,555" size="145,155" stereotype="enumeration" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinMode">
+    <children xsi:type="editmodel:CompartmentEditModel" size="73,72">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="unicast" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinMode/unicast">
+        <model href="ICM.ecore#//SourcePinMode/unicast"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="multicast" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinMode/multicast">
+        <model href="ICM.ecore#//SourcePinMode/multicast"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="synch" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinMode/synch">
+        <model href="ICM.ecore#//SourcePinMode/synch"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel" name="reenter" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinMode/reenter">
+        <model href="ICM.ecore#//SourcePinMode/reenter"/>
+      </children>
+    </children>
+    <model href="ICM.ecore#//SourcePinMode"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.20/@sourceConnections.0" name="AssemblyInstance" location="19,177" size="188,105" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//AssemblyInstance" runTimeClassModel="connectionOverhead,name">
+    <children xsi:type="editmodel:CompartmentEditModel" size="165,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//AssemblyInstance/name">
+        <model href="ICM.ecore#//AssemblyInstance/name"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="connectionOverhead" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//AssemblyInstance/connectionOverhead">
+        <model href="ICM.ecore#//AssemblyInstance/connectionOverhead"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.2" target="//@children.10" targetEnd="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="elements" location="0,7" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//AssemblyInstance/elements" multiplicityLabel="//@children.2/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.2/@sourceConnections.0/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="280,281" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="elements" location="241,253" size="43,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//AssemblyInstance/elements"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="188,97" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.2" target="//@children.21" targetEnd="//@children.2/@sourceConnections.1/@children.1" sourceEnd="//@children.2/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="178,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="mutexes" location="0,42" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//AssemblyInstance/mutexes" multiplicityLabel="//@children.2/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.2/@sourceConnections.1/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="mutexes" location="480,35" size="41,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="517,63" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//AssemblyInstance/mutexes"/>
+      </children>
+    </sourceConnections>
+    <model href="ICM.ecore#//AssemblyInstance"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ServiceSourcePinIcm" location="769,520" size="179,87" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ServiceSourcePinIcm" runTimeClassModel="deadline">
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="deadline" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ServiceSourcePinIcm/deadline">
+        <model href="ICM.ecore#//ServiceSourcePinIcm/deadline"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.3" target="//@children.4" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="72,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="87,111"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.3" target="//@children.13" targetEnd="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="eventDistribution" location="114,52" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ServiceSourcePinIcm/eventDistribution" multiplicityLabel="//@children.3/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.3/@sourceConnections.1/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="646,634" size="6,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="eventDistribution" location="646,662" size="80,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//ServiceSourcePinIcm/eventDistribution"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,54" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.3" target="//@children.13" targetEnd="//@children.3/@sourceConnections.2/@children.1" sourceEnd="//@children.3/@sourceConnections.2/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,13" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="execTimeDistribution" location="104,0" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ServiceSourcePinIcm/execTimeDistribution" multiplicityLabel="//@children.3/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.3/@sourceConnections.2/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="execTimeDistribution" location="591,563" size="99,14" fontInfo="Arial-8-0" automaticRelocationAllowed="false" locationOnWireFromSource="2.9999999999999996" distanceFromWire="11.999999999999998" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="636,582" size="18,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//ServiceSourcePinIcm/execTimeDistribution"/>
+      </children>
+    </sourceConnections>
+    <model href="ICM.ecore#//ServiceSourcePinIcm"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.5/@sourceConnections.2" name="SourcePinInstance" location="754,377" size="161,111" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinInstance" runTimeClassModel="mode">
+    <children xsi:type="editmodel:CompartmentEditModel" size="126,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="mode" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinInstance/mode">
+        <model href="ICM.ecore#//SourcePinInstance/mode"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.4" target="//@children.5/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" targetConnections="//@children.18/@sourceConnections.0" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.1/@children.1" sourceEnd="//@children.4/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="linkSources" location="0,91" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/linkSources" attachSource="true" multiplicityLabel="//@children.4/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.4/@sourceConnections.1/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="743,475" size="4,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="linkSources" location="691,447" size="56,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="ICM.ecore#//SinkPinInstance/linkSources"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="sinks" location="166,98" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinInstance/sinks" multiplicityLabel="//@children.4/@sourceConnections.1/@children.1/@children.0" roleLabel="//@children.4/@sourceConnections.1/@children.1/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="672,454" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="sinks" location="672,482" size="25,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//SourcePinInstance/sinks"/>
+      </children>
+    </sourceConnections>
+    <model href="ICM.ecore#//SourcePinInstance"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1" name="SinkPinInstance" location="499,377" size="166,125" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance" runTimeClassModel="downsamplingFactor,priority,mode">
+    <children xsi:type="editmodel:CompartmentEditModel" size="143,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="mode" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/mode">
+        <model href="ICM.ecore#//SinkPinInstance/mode"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="priority" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/priority">
+        <model href="ICM.ecore#//SinkPinInstance/priority"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="downsamplingFactor" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/downsamplingFactor">
+        <model href="ICM.ecore#//SinkPinInstance/downsamplingFactor"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.4/@sourceConnections.0" autoLocated="true" source="//@children.5" target="//@children.6" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="83,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="58,121" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.5" target="//@children.13" targetEnd="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="execTimeDistribution" location="54,0" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/execTimeDistribution" multiplicityLabel="//@children.5/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.5/@sourceConnections.1/@children.0/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="586,582" size="6,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="execTimeDistribution" location="473,582" size="99,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//SinkPinInstance/execTimeDistribution"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,123" attachSource="true"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" targetConnections="//@children.17/@sourceConnections.0" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="reactSources" location="0,35" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/reactSources" multiplicityLabel="//@children.5/@sourceConnections.2/@children.0/@children.0" roleLabel="//@children.5/@sourceConnections.2/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="743,391" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="reactSources" location="681,419" size="66,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//SinkPinInstance/reactSources"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="reactSinks" location="166,20" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SourcePinInstance/reactSinks" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="reactSinks" location="672,376" size="51,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="672,404" size="4,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="ICM.ecore#//SourcePinInstance/reactSinks"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.5" target="//@children.21" targetEnd="//@children.5/@sourceConnections.3/@children.1" sourceEnd="//@children.5/@sourceConnections.3/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="48,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="mutexes" location="54,87" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SinkPinInstance/mutexes" multiplicityLabel="//@children.5/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="mutexes" location="589,108" size="41,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="571,108" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//SinkPinInstance/mutexes"/>
+      </children>
+    </sourceConnections>
+    <model href="ICM.ecore#//SinkPinInstance"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.0 //@children.5/@sourceConnections.0" name="PinInstance" location="623,163" size="116,123" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//PinInstance" runTimeClassModel="id,nodeNum,name">
+    <children xsi:type="editmodel:CompartmentEditModel" size="103,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//PinInstance/name">
+        <model href="ICM.ecore#//PinInstance/name"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="nodeNum" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//PinInstance/nodeNum">
+        <model href="ICM.ecore#//PinInstance/nodeNum"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//PinInstance/id">
+        <model href="ICM.ecore#//PinInstance/id"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.6" target="//@children.20" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,20" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="scenarios" location="108,83" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//PinInstance/scenarios" multiplicityLabel="//@children.6/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="scenarios" location="445,162" size="48,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="445,190" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//PinInstance/scenarios"/>
+      </children>
+    </sourceConnections>
+    <model href="ICM.ecore#//PinInstance"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.9/@sourceConnections.0" name="IcmComponent" location="180,461" size="138,59" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Component" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="75,18"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.8/@sourceConnections.0" autoLocated="true" source="//@children.7" target="//@children.10" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="68,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,140" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//IcmComponent"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="IcmService" location="363,461" size="113,87" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Service" runTimeClassModel="priority">
+    <children xsi:type="editmodel:CompartmentEditModel" size="75,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="priority" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//IcmService/priority">
+        <model href="ICM.ecore#//IcmService/priority"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.8" target="//@children.7/@sourceConnections.0" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="55,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//IcmService"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SSComponent" location="213,567" size="162,123" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SSComponent" runTimeClassModel="backgroundPriority,replenishmentPeriod,budget">
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="backgroundPriority" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SSComponent/backgroundPriority">
+        <model href="ICM.ecore#//SSComponent/backgroundPriority"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="budget" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SSComponent/budget">
+        <model href="ICM.ecore#//SSComponent/budget"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="replenishmentPeriod" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//SSComponent/replenishmentPeriod">
+        <model href="ICM.ecore#//SSComponent/replenishmentPeriod"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.9" target="//@children.7" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="52,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="85,59"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//SSComponent"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.7/@sourceConnections.0" name="ElementInstance" location="291,267" size="147,141" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ElementInstance" runTimeClassModel="typeName,nodeNum,name,typeNodeNum">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ElementInstance/name">
+        <model href="ICM.ecore#//ElementInstance/name"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="nodeNum" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ElementInstance/nodeNum">
+        <model href="ICM.ecore#//ElementInstance/nodeNum"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="typeName" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ElementInstance/typeName">
+        <model href="ICM.ecore#//ElementInstance/typeName"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="typeNodeNum" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ElementInstance/typeNodeNum">
+        <model href="ICM.ecore#//ElementInstance/typeNodeNum"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.10" target="//@children.6" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="elementInstance" location="147,52" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//PinInstance/elementInstance" attachSource="true" multiplicityLabel="//@children.10/@sourceConnections.0/@children.0/@children.0" roleLabel="//@children.10/@sourceConnections.0/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="445,298" size="18,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="elementInstance" location="445,326" size="78,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="ICM.ecore#//PinInstance/elementInstance"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="pins" location="0,58" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//ElementInstance/pins" multiplicityLabel="//@children.10/@sourceConnections.0/@children.1/@children.0" roleLabel="//@children.10/@sourceConnections.0/@children.1/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="612,228" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="pins" location="596,200" size="20,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="ICM.ecore#//ElementInstance/pins"/>
+      </children>
+    </sourceConnections>
+    <model href="ICM.ecore#//ElementInstance"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Constant" location="508,765" size="116,105" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Constant" runTimeClassModel="value,offset">
+    <children xsi:type="editmodel:CompartmentEditModel" size="93,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="value" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Constant/value">
+        <model href="ICM.ecore#//Constant/value"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="offset" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Constant/offset">
+        <model href="ICM.ecore#//Constant/offset"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.11" target="//@children.12/@sourceConnections.0" targetEnd="//@children.11/@sourceConnections.0/@children.1" sourceEnd="//@children.11/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//Constant"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Normal" location="220,765" size="121,105" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Normal" runTimeClassModel="mean,stdDev">
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="mean" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Normal/mean">
+        <model href="ICM.ecore#//Normal/mean"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="stdDev" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Normal/stdDev">
+        <model href="ICM.ecore#//Normal/stdDev"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.16/@sourceConnections.0 //@children.11/@sourceConnections.0 //@children.15/@sourceConnections.0 //@children.14/@sourceConnections.0" autoLocated="true" source="//@children.12" target="//@children.13" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="57,95" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//Normal"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.12/@sourceConnections.0 //@children.5/@sourceConnections.1 //@children.3/@sourceConnections.1 //@children.3/@sourceConnections.2" name="Distribution" location="525,603" size="114,97" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Distribution" runTimeClassModel=" add(value: EDouble)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="48,18">
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Distribution/add">
+        <model href="ICM.ecore#//Distribution/add"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="ICM.ecore#//Distribution"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Unknown" location="794,760" size="121,123" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Unknown" runTimeClassModel="min,max,mean">
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="mean" location="10,78" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Unknown/mean">
+        <model href="ICM.ecore#//Unknown/mean"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="min" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Unknown/min">
+        <model href="ICM.ecore#//Unknown/min"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="max" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Unknown/max">
+        <model href="ICM.ecore#//Unknown/max"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.14" target="//@children.12/@sourceConnections.0" targetEnd="//@children.14/@sourceConnections.0/@children.1" sourceEnd="//@children.14/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="60,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//Unknown"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Exponential" location="651,765" size="118,87" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Exponential" runTimeClassModel="mean">
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="mean" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Exponential/mean">
+        <model href="ICM.ecore#//Exponential/mean"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.15" target="//@children.12/@sourceConnections.0" targetEnd="//@children.15/@sourceConnections.0/@children.1" sourceEnd="//@children.15/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="59,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//Exponential"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Uniform" location="371,765" size="107,105" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Uniform" runTimeClassModel="min,max">
+    <children xsi:type="editmodel:CompartmentEditModel" size="84,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="max" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Uniform/max">
+        <model href="ICM.ecore#//Uniform/max"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="min" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Uniform/min">
+        <model href="ICM.ecore#//Uniform/min"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.16" target="//@children.12/@sourceConnections.0" targetEnd="//@children.16/@sourceConnections.0/@children.1" sourceEnd="//@children.16/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="53,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//Uniform"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:NotepadEditModel" location="806,275" size="115,52" fontInfo="Arial-8-0" note="List of source pins&#xD;&#xA;this sink reacts &#xD;&#xA;with internally.">
+    <sourceConnections xsi:type="editmodel:IndicationEditModel" autoLocated="true" source="//@children.17" target="//@children.5/@sourceConnections.2" targetEnd="//@children.17/@sourceConnections.0/@children.1" sourceEnd="//@children.17/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="24,52" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,-49" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:NotepadEditModel" location="764,586" size="100,80" fontInfo="Arial-8-0" note="List of sink pins&#xD;&#xA;this source &#xD;&#xA;interacts with &#xD;&#xA;(outgoing &#xD;&#xA;interactions).">
+    <sourceConnections xsi:type="editmodel:IndicationEditModel" autoLocated="true" source="//@children.18" target="//@children.4/@sourceConnections.1" targetEnd="//@children.18/@sourceConnections.0/@children.1" sourceEnd="//@children.18/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="24,-1" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-34,-64" anchorKind="FixedAtEdge" attachSource="true"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="SEI Proprietary Information" location="39,30" size="127,14" fontInfo="Arial-8-0"/>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="Scenario" location="330,100" size="108,105" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Scenario" runTimeClassModel="name,number">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Scenario/name">
+        <model href="ICM.ecore#//Scenario/name"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="number" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Scenario/number">
+        <model href="ICM.ecore#//Scenario/number"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.20" target="//@children.2" targetEnd="//@children.20/@sourceConnections.0/@children.1" sourceEnd="//@children.20/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="scenarios" location="0,90" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//AssemblyInstance/scenarios" attachSource="true" multiplicityLabel="//@children.20/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.20/@sourceConnections.0/@children.0/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="scenarios" location="275,169" size="48,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="319,197" size="4,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="ICM.ecore#//AssemblyInstance/scenarios"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="188,13"/>
+    </sourceConnections>
+    <model href="ICM.ecore#//Scenario"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.1 //@children.5/@sourceConnections.3" name="Mutex" location="528,14" size="108,87" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Mutex" runTimeClassModel="name">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/SEI.Perf-RF/models/icm/ICM.ecore#//Mutex/name">
+        <model href="ICM.ecore#//Mutex/name"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="ICM.ecore#//Mutex"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="ICM.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=3"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

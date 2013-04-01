@@ -1,0 +1,4 @@
+Tp,Up,Ta,Sa,Sss,Tss,trace,temp,periodic,busy,entercpu
+857,801,506,697,1019,1179,910,503,893,210,891
+conValue,conValue,conValue,conValue,init,conValue,fName,fName,fName,fName,fName
+20,0.9,200,12,12,100,<model>_trace.csv,<model>_temp.csv,<model>_period.csv,<model>_busy.csv,<model>_cpu.csv

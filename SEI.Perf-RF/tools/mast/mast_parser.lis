@@ -1,0 +1,90 @@
+Initializing error report...
+ 7   Processing_Resource (
+ 8       Type => Fixed_Priority_Processor,
+ 9   	Name => CPU_1,
+ 10  	Max_Priority => 200,
+ 11      Min_Priority => 1,
+ 12      Max_Interrupt_Priority  => 300,
+ 13      Min_Interrupt_Priority  => 100);
+ 16  Scheduling_Server (
+ 17          Type                            => Fixed_Priority,
+ 18          Name                            => Task_1,
+ 19          Server_Sched_Parameters         => (
+ 20                  Type            => Fixed_Priority_policy,
+ 21                  The_Priority            => 10),
+ 22          Server_Processing_Resource      => CPU_1);
+ 27  Operation (
+ 28  	Type => Simple,
+ 29  	Name => OP_A,
+ 30  	New_Sched_Parameters => (
+ 31  		Type => Overridden_Fixed_Priority,
+ 32          The_Priority => 10
+ 33  	),
+ 34  	Worst_Case_Execution_Time => 20
+ 35  ); 
+ 37  Operation (
+ 38  	Type => Simple,
+ 39  	Name => OP_B,
+ 40  	New_Sched_Parameters => (
+ 41  		Type => Overridden_Fixed_Priority,
+ 42          The_Priority => 6
+ 43  	),
+ 44  	Worst_Case_Execution_Time => 30
+ 45  ); 
+ 47  Operation (
+ 48  	Type => Simple,
+ 49  	Name => OP_C,
+ 50  	New_Sched_Parameters => (
+ 51  		Type => Overridden_Fixed_Priority,
+ 52          The_Priority => 8
+ 53  	),
+ 54  	Worst_Case_Execution_Time => 15
+ 55  ); 
+ 57  Transaction (
+ 58      Type => Regular,
+ 59      Name => Task_A,
+ 60      External_Events => (
+ 61              (Type   => Periodic,
+ 62               Name   => Tick_1,
+ 63               Period => 200)
+ 64      ),
+ 65      Internal_Events => (
+ 66              (Type   => regular,
+ 67               name   => O1,
+ 68               Timing_Requirements => (
+ 69                       Type             => Hard_Global_Deadline,
+ 70                       Deadline         => 200,
+ 71                       Referenced_Event => Tick_1)),
+ 72              (Type   => regular,
+ 73               name   => O2,
+ 74               Timing_Requirements => (
+ 75                       Type             => Hard_Global_Deadline,
+ 76                       Deadline         => 200,
+ 77                       Referenced_Event => Tick_1)),
+ 78               (Type => regular, name => E1),
+ 79               (Type => regular, name => E2),
+ 80               (Type => regular, name => E3)
+ 81      ),
+ 82      Event_Handlers => (
+ 83              (Type               => Activity,
+ 84               Input_Event        => Tick_1,
+ 85               Output_Event       => E1,
+ 86               Activity_Operation => OP_A,
+ 87               Activity_Server    => Task_1),
+ 88              (Type               => Multicast,
+ 89               Input_Event        => E1,
+ 90               Output_Events_List => (E2, E3)),
+ 91              (Type               => Activity,
+ 92               Input_Event        => E2,
+ 93               Output_Event       => O1,
+ 94               Activity_Operation => OP_B,
+ 95               Activity_Server    => Task_1),
+ 96              (Type               => Activity,
+ 97               Input_Event        => E3,
+ 98               Output_Event       => O2,
+ 99               Activity_Operation => OP_C,
+ 100              Activity_Server    => Task_1)
+ 101      )
+ 102 );
+ 104 
+

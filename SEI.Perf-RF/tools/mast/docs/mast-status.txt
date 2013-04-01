@@ -1,0 +1,113 @@
+                       MAST Status File
+                       ----------------
+
+Version 1.2.2
+-------------
+
+   This version fixes a bug in the offset-based analysis technique.
+   Thanks to Ola Redell for catching it.
+
+Version 1.2
+-----------
+
+   This version introduces support for analysis of linear systems with
+   offsets, delays, or rate divisors. The tools supporting these
+   features are the linear analysis tools (offset-based, and holistic)
+
+   This version adds the following tools:
+
+       Classic_RM_Analysis
+       Varying_Priorities_Analysis
+
+   This tool introduces a new format for the results, and a gui tool
+   to view those results (gmastresults)
+
+   Other changes introduced:
+
+       Added the Permanent_Overridden_Scheduling_Parameters object,
+       to represent the case in which an operation changes its
+       priority to a given value, but does not return to the previous
+       value at the end of the operation. This new part of the model
+       is analyzable with the Varying_Priorities_Analysis tool.
+
+       Added the processing resource slacks and the operation slacks.
+
+   Supported Tools
+   ---------------
+       All restrictions
+       All consistency checks
+       Classic_RM_Analysis
+       Varying_Priorities_Analysis
+       Holistic_Analysis
+       Offset_Based_Unoptimized_Analysis
+       Offset_Based_Analysis
+       Calculate_Blocking_Times
+       Calculate_Ceilings_For_PCP_Resources
+       Calculate_Transaction_Slack
+       Calculate_System_Slack
+       Graphical driver for analysis tool
+       Monoprocessor_Priority_Assignment
+       Linear_HOPA
+       Linear_Simulated_Annealing      
+       Graphic Results Display
+
+   Unsupported tools
+   -----------------
+       Multiple_Event_Analysis
+       Multiple_Event_HOPA
+       Multiple_Event_Simulated_Annealing_Priority_Assignment
+       Monoprocessor_Simulation
+       Distributed_Simulation
+       Graphic Input Editor
+
+
+Version 1.1
+-----------
+
+   This version adds the following tools:
+
+       Monoprocessor_Priority_Assignment
+       Linear_HOPA
+       Linear_Simulated_Annealing      
+
+   Changes introduced:
+
+       Added the "preassigned" field to scheduling parameters and
+       immediate_ceiling shared resources, to allow the designer to
+       specify which priorities are to be assigned or preserved.
+
+   Supported Tools
+   ---------------
+       All restrictions
+       All consistency checks
+       Holistic_Analysis
+       Offset_Based_Unoptimized_Analysis
+       Offset_Based_Analysis
+       Calculate_Blocking_Times
+       Calculate_Ceilings_For_PCP_Resources
+       Calculate_Transaction_Slack
+       Calculate_System_Slack
+       Graphical driver for analysis tool
+       Monoprocessor_Priority_Assignment
+       Linear_HOPA
+       Linear_Simulated_Annealing      
+
+Version 1.0
+------------
+
+   This is the first "alpha" version for distribution. 
+
+   Supported Tools
+   ---------------
+       All restrictions
+       All consistency checks
+       Holistic_Analysis
+       Offset_Based_Unoptimized_Analysis
+       Offset_Based_Analysis
+       Calculate_Blocking_Times
+       Calculate_Ceilings_For_PCP_Resources
+       Calculate_Transaction_Slack
+       Calculate_System_Slack
+       Graphical driver for analysis tool
+
+
