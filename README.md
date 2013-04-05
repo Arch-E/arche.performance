@@ -4,6 +4,8 @@ ArchE Performance Reasoning Framework
 To build
 --------
 
+*Note: You need arche-core to run the reasoning framework.*
+
 Run in Eclipse.
 
 Import the project in your workspace and build all (Ctrl + B).
